@@ -1,0 +1,44 @@
+<?php
+// $Id$
+
+/**
+ * @file
+ * Transliteration
+ * by Stefan Kudwien and Daniel Kudwien
+ * developed by UNLEASHED MIND - www.unleashedmind.com
+ *
+ * Provides transliteration for UTF-8 text input and sanitzes file names.
+ *
+ * Uses data from the Text::Unidecode Perl library.
+ * @see http://search.cpan.org/~sburke/Text-Unidecode-0.04/lib/Text/Unidecode.pm
+ */
+
+/**
+ * Transliterate UTF-8 input to plain ASCII.
+ *
+ * @param string $input
+ *   UTF-8 text input.
+ * @param string $unknown
+ *   Replacement for unknown or illegal characters.
+ * @return string
+ *   Plain ASCII output.
+ */
+function transliteration_get($input, $unknown = '?') {
+  require_once(drupal_get_path('module', 'transliteration') .'/transliteration.inc');
+  return _transliteration_process($input, $unknown);
+}
+
+/**
+ * Implementation of hook_menu().
+ *
+ * Transliterate and clean the names of new uploaded files.
+ */
+function transliteration_menu($may_cache) {
+  if (!$may_cache && !empty($_FILES['files'])) {
+    require_once(drupal_get_path('module', 'transliteration') .'/transliteration.inc');
+    foreach ($_FILES['files']['name'] as $field => $filename) {
+      $_FILES['files']['name'][$field] = transliteration_clean_filename($filename);
+    }
+  }
+}
+
