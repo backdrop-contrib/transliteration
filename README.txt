@@ -26,6 +26,19 @@ None.
    transliterated and cleaned from invalid characters.
 
 
+-- INTEGRATION --
+
+Module developers that want to make use of transliteration may use the following
+code:
+
+if (module_exists('transliteration')) {
+  $transliterated = transliteration_get($input);
+}
+
+Take a look at transliteration.module for an explanation of additional function
+parameters.
+
+
 -- CONTACT --
 
 Authors:
