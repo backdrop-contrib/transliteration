@@ -7,9 +7,9 @@ other Drupal modules, as well as sanitizing the file names when uploading new
 files.
 
 For a full description visit the project page:
-  http://drupal.org/project/transliterate
+  http://drupal.org/project/transliteration
 Bug reports, feature suggestions and latest developments:
-  http://drupal.org/project/transliterate/issues
+  http://drupal.org/project/issues/transliteration
 
 
 -- REQUIREMENTS --
@@ -28,11 +28,11 @@ None.
 
 -- INTEGRATION --
 
-Module developers that want to make use of transliteration may use the following
-code:
+Module developers that want to make use of transliteration to clean input
+strings should code similar to the following:
 
 if (module_exists('transliteration')) {
-  $transliterated = transliteration_get($input);
+  $transliterated = transliteration_get($string);
 }
 
 Take a look at transliteration.module for an explanation of additional function
