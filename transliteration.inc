@@ -1,4 +1,5 @@
 <?php
+// $Id$
 
 /**
  * Sanitize a file name.
