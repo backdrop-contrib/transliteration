@@ -1,10 +1,5 @@
 // $Id$
 
-Transliteration 5.x-1.x, xxxx-xx-xx
+Transliteration 6.x-1.x, xxxx-xx-xx
 -----------------------------------
-
-
-Transliteration 5.x-1.0, 2007-12-09
------------------------------------
-Initial release.
 

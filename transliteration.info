@@ -1,4 +1,5 @@
 ; $Id$
 name = Transliteration
 description = Provides transliteration for UTF-8 text input and sanitzes file names.
+core = 6.x
 

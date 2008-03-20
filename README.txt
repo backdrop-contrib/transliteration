@@ -22,7 +22,10 @@ None.
 1. Copy the transliteration module to your modules directory and enable it on
    the Modules page (admin/build/modules).
 
-2. That's it. The names of all uploaded files will now automatically be
+   During installation or update all filenames containing invalid characters
+   will be automatically converted.
+
+2. That's it. The names of all new uploaded files will now automatically be
    transliterated and cleaned from invalid characters.
 
 
