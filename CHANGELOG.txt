@@ -2,4 +2,10 @@
 
 Transliteration 6.x-1.x, xxxx-xx-xx
 -----------------------------------
+#253916 by Freso: Fixed typo in .info file.
+
+
+Transliteration 6.x-1.0, 2007-03-20
+-----------------------------------
+Initial release.
 
