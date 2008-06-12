@@ -1,6 +1,8 @@
 <?php
+// $Id$
+
 return array(
-  'default' => array('nzup', 'nzurx', 'nzur', 'nzyt', 'nzyx', 'nzy', 'nzyp', 'nzyrx', 'nzyr', 'sit', 'six', 'si', 'sip', 'siex', 'sie', 'siep',
+  'en' => array('nzup', 'nzurx', 'nzur', 'nzyt', 'nzyx', 'nzy', 'nzyp', 'nzyrx', 'nzyr', 'sit', 'six', 'si', 'sip', 'siex', 'sie', 'siep',
     'sat', 'sax', 'sa', 'sap', 'suox', 'suo', 'suop', 'sot', 'sox', 'so', 'sop', 'sex', 'se', 'sep', 'sut', 'sux',
     'su', 'sup', 'surx', 'sur', 'syt', 'syx', 'sy', 'syp', 'syrx', 'syr', 'ssit', 'ssix', 'ssi', 'ssip', 'ssiex', 'ssie',
     'ssiep', 'ssat', 'ssax', 'ssa', 'ssap', 'ssot', 'ssox', 'sso', 'ssop', 'ssex', 'sse', 'ssep', 'ssut', 'ssux', 'ssu', 'ssup',

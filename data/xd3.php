@@ -1,6 +1,8 @@
 <?php
+// $Id$
+
 return array(
-  'default' => array('tim', 'tib', 'tibs', 'tis', 'tiss', 'ting', 'tij', 'tic', 'tik', 'tit', 'tip', 'tih', 'pa', 'pag', 'pagg', 'pags',
+  'en' => array('tim', 'tib', 'tibs', 'tis', 'tiss', 'ting', 'tij', 'tic', 'tik', 'tit', 'tip', 'tih', 'pa', 'pag', 'pagg', 'pags',
     'pan', 'panj', 'panh', 'pad', 'pal', 'palg', 'palm', 'palb', 'pals', 'palt', 'palp', 'palh', 'pam', 'pab', 'pabs', 'pas',
     'pass', 'pang', 'paj', 'pac', 'pak', 'pat', 'pap', 'pah', 'pae', 'paeg', 'paegg', 'paegs', 'paen', 'paenj', 'paenh', 'paed',
     'pael', 'paelg', 'paelm', 'paelb', 'paels', 'paelt', 'paelp', 'paelh', 'paem', 'paeb', 'paebs', 'paes', 'paess', 'paeng', 'paej', 'paec',

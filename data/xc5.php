@@ -1,6 +1,8 @@
 <?php
+// $Id$
+
 return array(
-  'default' => array('sseum', 'sseub', 'sseubs', 'sseus', 'sseuss', 'sseung', 'sseuj', 'sseuc', 'sseuk', 'sseut', 'sseup', 'sseuh', 'ssyi', 'ssyig', 'ssyigg', 'ssyigs',
+  'en' => array('sseum', 'sseub', 'sseubs', 'sseus', 'sseuss', 'sseung', 'sseuj', 'sseuc', 'sseuk', 'sseut', 'sseup', 'sseuh', 'ssyi', 'ssyig', 'ssyigg', 'ssyigs',
     'ssyin', 'ssyinj', 'ssyinh', 'ssyid', 'ssyil', 'ssyilg', 'ssyilm', 'ssyilb', 'ssyils', 'ssyilt', 'ssyilp', 'ssyilh', 'ssyim', 'ssyib', 'ssyibs', 'ssyis',
     'ssyiss', 'ssying', 'ssyij', 'ssyic', 'ssyik', 'ssyit', 'ssyip', 'ssyih', 'ssi', 'ssig', 'ssigg', 'ssigs', 'ssin', 'ssinj', 'ssinh', 'ssid',
     'ssil', 'ssilg', 'ssilm', 'ssilb', 'ssils', 'ssilt', 'ssilp', 'ssilh', 'ssim', 'ssib', 'ssibs', 'ssis', 'ssiss', 'ssing', 'ssij', 'ssic',

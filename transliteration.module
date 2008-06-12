@@ -12,16 +12,24 @@
 /**
  * Transliterate UTF-8 input to plain ASCII.
  *
+ * This function loads the required include file and returns the result of the
+ * main function, transliteration_process().
+ *
  * @param string $input
  *   UTF-8 text input.
  * @param string $unknown
- *   Replacement for unknown or illegal characters.
+ *   Replacement for unknown characters and illegal UTF-8 sequences.
+ * @param string $langcode
+ *   Optional ISO 639 language code used to import language specific
+ *   replacements. See data/x00.php for an example. Defaults to the
+ *   current display language.
  * @return string
  *   Plain ASCII output.
+ * @see transliteration_process()
  */
-function transliteration_get($input, $unknown = '?') {
+function transliteration_get($input, $unknown = '?', $langcode = NULL) {
   require_once(drupal_get_path('module', 'transliteration') .'/transliteration.inc');
-  return _transliteration_process($input, $unknown);
+  return transliteration_process($input, $unknown, $langcode);
 }
 
 /**
@@ -32,8 +40,14 @@ function transliteration_get($input, $unknown = '?') {
 function transliteration_init() {
   if (!empty($_FILES['files'])) {
     require_once(drupal_get_path('module', 'transliteration') .'/transliteration.inc');
+
+    $langcode = NULL;
+    if (!empty($_POST['language'])) {
+      $languages = language_list();
+      $langcode = isset($languages[$_POST['language']]) ? $_POST['language'] : NULL;
+    }
     foreach ($_FILES['files']['name'] as $field => $filename) {
-      $_FILES['files']['name'][$field] = transliteration_clean_filename($filename);
+      $_FILES['files']['name'][$field] = transliteration_clean_filename($filename, $langcode);
     }
   }
 }

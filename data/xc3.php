@@ -1,6 +1,8 @@
 <?php
+// $Id$
+
 return array(
-  'default' => array('ssal', 'ssalg', 'ssalm', 'ssalb', 'ssals', 'ssalt', 'ssalp', 'ssalh', 'ssam', 'ssab', 'ssabs', 'ssas', 'ssass', 'ssang', 'ssaj', 'ssac',
+  'en' => array('ssal', 'ssalg', 'ssalm', 'ssalb', 'ssals', 'ssalt', 'ssalp', 'ssalh', 'ssam', 'ssab', 'ssabs', 'ssas', 'ssass', 'ssang', 'ssaj', 'ssac',
     'ssak', 'ssat', 'ssap', 'ssah', 'ssae', 'ssaeg', 'ssaegg', 'ssaegs', 'ssaen', 'ssaenj', 'ssaenh', 'ssaed', 'ssael', 'ssaelg', 'ssaelm', 'ssaelb',
     'ssaels', 'ssaelt', 'ssaelp', 'ssaelh', 'ssaem', 'ssaeb', 'ssaebs', 'ssaes', 'ssaess', 'ssaeng', 'ssaej', 'ssaec', 'ssaek', 'ssaet', 'ssaep', 'ssaeh',
     'ssya', 'ssyag', 'ssyagg', 'ssyags', 'ssyan', 'ssyanj', 'ssyanh', 'ssyad', 'ssyal', 'ssyalg', 'ssyalm', 'ssyalb', 'ssyals', 'ssyalt', 'ssyalp', 'ssyalh',

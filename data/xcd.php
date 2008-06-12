@@ -1,6 +1,8 @@
 <?php
+// $Id$
+
 return array(
-  'default' => array('cyess', 'cyeng', 'cyej', 'cyec', 'cyek', 'cyet', 'cyep', 'cyeh', 'co', 'cog', 'cogg', 'cogs', 'con', 'conj', 'conh', 'cod',
+  'en' => array('cyess', 'cyeng', 'cyej', 'cyec', 'cyek', 'cyet', 'cyep', 'cyeh', 'co', 'cog', 'cogg', 'cogs', 'con', 'conj', 'conh', 'cod',
     'col', 'colg', 'colm', 'colb', 'cols', 'colt', 'colp', 'colh', 'com', 'cob', 'cobs', 'cos', 'coss', 'cong', 'coj', 'coc',
     'cok', 'cot', 'cop', 'coh', 'cwa', 'cwag', 'cwagg', 'cwags', 'cwan', 'cwanj', 'cwanh', 'cwad', 'cwal', 'cwalg', 'cwalm', 'cwalb',
     'cwals', 'cwalt', 'cwalp', 'cwalh', 'cwam', 'cwab', 'cwabs', 'cwas', 'cwass', 'cwang', 'cwaj', 'cwac', 'cwak', 'cwat', 'cwap', 'cwah',

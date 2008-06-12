@@ -1,6 +1,8 @@
 <?php
+// $Id$
+
 return array(
-  'default' => array('bbess', 'bbeng', 'bbej', 'bbec', 'bbek', 'bbet', 'bbep', 'bbeh', 'bbyeo', 'bbyeog', 'bbyeogg', 'bbyeogs', 'bbyeon', 'bbyeonj', 'bbyeonh', 'bbyeod',
+  'en' => array('bbess', 'bbeng', 'bbej', 'bbec', 'bbek', 'bbet', 'bbep', 'bbeh', 'bbyeo', 'bbyeog', 'bbyeogg', 'bbyeogs', 'bbyeon', 'bbyeonj', 'bbyeonh', 'bbyeod',
     'bbyeol', 'bbyeolg', 'bbyeolm', 'bbyeolb', 'bbyeols', 'bbyeolt', 'bbyeolp', 'bbyeolh', 'bbyeom', 'bbyeob', 'bbyeobs', 'bbyeos', 'bbyeoss', 'bbyeong', 'bbyeoj', 'bbyeoc',
     'bbyeok', 'bbyeot', 'bbyeop', 'bbyeoh', 'bbye', 'bbyeg', 'bbyegg', 'bbyegs', 'bbyen', 'bbyenj', 'bbyenh', 'bbyed', 'bbyel', 'bbyelg', 'bbyelm', 'bbyelb',
     'bbyels', 'bbyelt', 'bbyelp', 'bbyelh', 'bbyem', 'bbyeb', 'bbyebs', 'bbyes', 'bbyess', 'bbyeng', 'bbyej', 'bbyec', 'bbyek', 'bbyet', 'bbyep', 'bbyeh',

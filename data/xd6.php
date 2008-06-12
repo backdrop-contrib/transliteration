@@ -1,6 +1,8 @@
 <?php
+// $Id$
+
 return array(
-  'default' => array('hyeo', 'hyeog', 'hyeogg', 'hyeogs', 'hyeon', 'hyeonj', 'hyeonh', 'hyeod', 'hyeol', 'hyeolg', 'hyeolm', 'hyeolb', 'hyeols', 'hyeolt', 'hyeolp', 'hyeolh',
+  'en' => array('hyeo', 'hyeog', 'hyeogg', 'hyeogs', 'hyeon', 'hyeonj', 'hyeonh', 'hyeod', 'hyeol', 'hyeolg', 'hyeolm', 'hyeolb', 'hyeols', 'hyeolt', 'hyeolp', 'hyeolh',
     'hyeom', 'hyeob', 'hyeobs', 'hyeos', 'hyeoss', 'hyeong', 'hyeoj', 'hyeoc', 'hyeok', 'hyeot', 'hyeop', 'hyeoh', 'hye', 'hyeg', 'hyegg', 'hyegs',
     'hyen', 'hyenj', 'hyenh', 'hyed', 'hyel', 'hyelg', 'hyelm', 'hyelb', 'hyels', 'hyelt', 'hyelp', 'hyelh', 'hyem', 'hyeb', 'hyebs', 'hyes',
     'hyess', 'hyeng', 'hyej', 'hyec', 'hyek', 'hyet', 'hyep', 'hyeh', 'ho', 'hog', 'hogg', 'hogs', 'hon', 'honj', 'honh', 'hod',

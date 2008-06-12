@@ -1,6 +1,8 @@
 <?php
+// $Id$
+
 return array(
-  'default' => array('jeo', 'jeog', 'jeogg', 'jeogs', 'jeon', 'jeonj', 'jeonh', 'jeod', 'jeol', 'jeolg', 'jeolm', 'jeolb', 'jeols', 'jeolt', 'jeolp', 'jeolh',
+  'en' => array('jeo', 'jeog', 'jeogg', 'jeogs', 'jeon', 'jeonj', 'jeonh', 'jeod', 'jeol', 'jeolg', 'jeolm', 'jeolb', 'jeols', 'jeolt', 'jeolp', 'jeolh',
     'jeom', 'jeob', 'jeobs', 'jeos', 'jeoss', 'jeong', 'jeoj', 'jeoc', 'jeok', 'jeot', 'jeop', 'jeoh', 'je', 'jeg', 'jegg', 'jegs',
     'jen', 'jenj', 'jenh', 'jed', 'jel', 'jelg', 'jelm', 'jelb', 'jels', 'jelt', 'jelp', 'jelh', 'jem', 'jeb', 'jebs', 'jes',
     'jess', 'jeng', 'jej', 'jec', 'jek', 'jet', 'jep', 'jeh', 'jyeo', 'jyeog', 'jyeogg', 'jyeogs', 'jyeon', 'jyeonj', 'jyeonh', 'jyeod',

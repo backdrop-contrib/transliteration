@@ -1,6 +1,8 @@
 <?php
+// $Id$
+
 return array(
-  'default' => array('ruk', 'rut', 'rup', 'ruh', 'rweo', 'rweog', 'rweogg', 'rweogs', 'rweon', 'rweonj', 'rweonh', 'rweod', 'rweol', 'rweolg', 'rweolm', 'rweolb',
+  'en' => array('ruk', 'rut', 'rup', 'ruh', 'rweo', 'rweog', 'rweogg', 'rweogs', 'rweon', 'rweonj', 'rweonh', 'rweod', 'rweol', 'rweolg', 'rweolm', 'rweolb',
     'rweols', 'rweolt', 'rweolp', 'rweolh', 'rweom', 'rweob', 'rweobs', 'rweos', 'rweoss', 'rweong', 'rweoj', 'rweoc', 'rweok', 'rweot', 'rweop', 'rweoh',
     'rwe', 'rweg', 'rwegg', 'rwegs', 'rwen', 'rwenj', 'rwenh', 'rwed', 'rwel', 'rwelg', 'rwelm', 'rwelb', 'rwels', 'rwelt', 'rwelp', 'rwelh',
     'rwem', 'rweb', 'rwebs', 'rwes', 'rwess', 'rweng', 'rwej', 'rwec', 'rwek', 'rwet', 'rwep', 'rweh', 'rwi', 'rwig', 'rwigg', 'rwigs',

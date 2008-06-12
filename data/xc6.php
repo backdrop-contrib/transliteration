@@ -1,6 +1,8 @@
 <?php
+// $Id$
+
 return array(
-  'default' => array('yeoss', 'yeong', 'yeoj', 'yeoc', 'yeok', 'yeot', 'yeop', 'yeoh', 'ye', 'yeg', 'yegg', 'yegs', 'yen', 'yenj', 'yenh', 'yed',
+  'en' => array('yeoss', 'yeong', 'yeoj', 'yeoc', 'yeok', 'yeot', 'yeop', 'yeoh', 'ye', 'yeg', 'yegg', 'yegs', 'yen', 'yenj', 'yenh', 'yed',
     'yel', 'yelg', 'yelm', 'yelb', 'yels', 'yelt', 'yelp', 'yelh', 'yem', 'yeb', 'yebs', 'yes', 'yess', 'yeng', 'yej', 'yec',
     'yek', 'yet', 'yep', 'yeh', 'o', 'og', 'ogg', 'ogs', 'on', 'onj', 'onh', 'od', 'ol', 'olg', 'olm', 'olb',
     'ols', 'olt', 'olp', 'olh', 'om', 'ob', 'obs', 'os', 'oss', 'ong', 'oj', 'oc', 'ok', 'ot', 'op', 'oh',

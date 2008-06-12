@@ -1,6 +1,8 @@
 <?php
+// $Id$
+
 return array(
-  'default' => array('cwik', 'cwit', 'cwip', 'cwih', 'cyu', 'cyug', 'cyugg', 'cyugs', 'cyun', 'cyunj', 'cyunh', 'cyud', 'cyul', 'cyulg', 'cyulm', 'cyulb',
+  'en' => array('cwik', 'cwit', 'cwip', 'cwih', 'cyu', 'cyug', 'cyugg', 'cyugs', 'cyun', 'cyunj', 'cyunh', 'cyud', 'cyul', 'cyulg', 'cyulm', 'cyulb',
     'cyuls', 'cyult', 'cyulp', 'cyulh', 'cyum', 'cyub', 'cyubs', 'cyus', 'cyuss', 'cyung', 'cyuj', 'cyuc', 'cyuk', 'cyut', 'cyup', 'cyuh',
     'ceu', 'ceug', 'ceugg', 'ceugs', 'ceun', 'ceunj', 'ceunh', 'ceud', 'ceul', 'ceulg', 'ceulm', 'ceulb', 'ceuls', 'ceult', 'ceulp', 'ceulh',
     'ceum', 'ceub', 'ceubs', 'ceus', 'ceuss', 'ceung', 'ceuj', 'ceuc', 'ceuk', 'ceut', 'ceup', 'ceuh', 'cyi', 'cyig', 'cyigg', 'cyigs',

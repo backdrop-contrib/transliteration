@@ -1,6 +1,8 @@
 <?php
+// $Id$
+
 return array(
-  'default' => array('poss', 'pong', 'poj', 'poc', 'pok', 'pot', 'pop', 'poh', 'pwa', 'pwag', 'pwagg', 'pwags', 'pwan', 'pwanj', 'pwanh', 'pwad',
+  'en' => array('poss', 'pong', 'poj', 'poc', 'pok', 'pot', 'pop', 'poh', 'pwa', 'pwag', 'pwagg', 'pwags', 'pwan', 'pwanj', 'pwanh', 'pwad',
     'pwal', 'pwalg', 'pwalm', 'pwalb', 'pwals', 'pwalt', 'pwalp', 'pwalh', 'pwam', 'pwab', 'pwabs', 'pwas', 'pwass', 'pwang', 'pwaj', 'pwac',
     'pwak', 'pwat', 'pwap', 'pwah', 'pwae', 'pwaeg', 'pwaegg', 'pwaegs', 'pwaen', 'pwaenj', 'pwaenh', 'pwaed', 'pwael', 'pwaelg', 'pwaelm', 'pwaelb',
     'pwaels', 'pwaelt', 'pwaelp', 'pwaelh', 'pwaem', 'pwaeb', 'pwaebs', 'pwaes', 'pwaess', 'pwaeng', 'pwaej', 'pwaec', 'pwaek', 'pwaet', 'pwaep', 'pwaeh',

@@ -1,6 +1,8 @@
 <?php
+// $Id$
+
 return array(
-  'default' => array('swa', 'swa', 'swaa', 'swaa', 'swaa', 's', 's', 'sw', 's', 'sk', 'skw', 'sW', 'spwa', 'stwa', 'skwa', 'scwa',
+  'en' => array('swa', 'swa', 'swaa', 'swaa', 'swaa', 's', 's', 'sw', 's', 'sk', 'skw', 'sW', 'spwa', 'stwa', 'skwa', 'scwa',
     'she', 'shi', 'shii', 'sho', 'shoo', 'sha', 'shaa', 'shwe', 'shwe', 'shwi', 'shwi', 'shwii', 'shwii', 'shwo', 'shwo', 'shwoo',
     'shwoo', 'shwa', 'shwa', 'shwaa', 'shwaa', 'sh', 'ye', 'yaai', 'yi', 'yii', 'yo', 'yoo', 'yoo', 'ya', 'yaa', 'ywe',
     'ywe', 'ywi', 'ywi', 'ywii', 'ywii', 'ywo', 'ywo', 'ywoo', 'ywoo', 'ywa', 'ywa', 'ywaa', 'ywaa', 'ywaa', 'y', 'y',

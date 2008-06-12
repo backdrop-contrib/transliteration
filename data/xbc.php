@@ -1,6 +1,8 @@
 <?php
+// $Id$
+
 return array(
-  'default' => array('mil', 'milg', 'milm', 'milb', 'mils', 'milt', 'milp', 'milh', 'mim', 'mib', 'mibs', 'mis', 'miss', 'ming', 'mij', 'mic',
+  'en' => array('mil', 'milg', 'milm', 'milb', 'mils', 'milt', 'milp', 'milh', 'mim', 'mib', 'mibs', 'mis', 'miss', 'ming', 'mij', 'mic',
     'mik', 'mit', 'mip', 'mih', 'ba', 'bag', 'bagg', 'bags', 'ban', 'banj', 'banh', 'bad', 'bal', 'balg', 'balm', 'balb',
     'bals', 'balt', 'balp', 'balh', 'bam', 'bab', 'babs', 'bas', 'bass', 'bang', 'baj', 'bac', 'bak', 'bat', 'bap', 'bah',
     'bae', 'baeg', 'baegg', 'baegs', 'baen', 'baenj', 'baenh', 'baed', 'bael', 'baelg', 'baelm', 'baelb', 'baels', 'baelt', 'baelp', 'baelh',

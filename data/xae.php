@@ -1,6 +1,8 @@
 <?php
+// $Id$
+
 return array(
-  'default' => array('geul', 'geulg', 'geulm', 'geulb', 'geuls', 'geult', 'geulp', 'geulh', 'geum', 'geub', 'geubs', 'geus', 'geuss', 'geung', 'geuj', 'geuc',
+  'en' => array('geul', 'geulg', 'geulm', 'geulb', 'geuls', 'geult', 'geulp', 'geulh', 'geum', 'geub', 'geubs', 'geus', 'geuss', 'geung', 'geuj', 'geuc',
     'geuk', 'geut', 'geup', 'geuh', 'gyi', 'gyig', 'gyigg', 'gyigs', 'gyin', 'gyinj', 'gyinh', 'gyid', 'gyil', 'gyilg', 'gyilm', 'gyilb',
     'gyils', 'gyilt', 'gyilp', 'gyilh', 'gyim', 'gyib', 'gyibs', 'gyis', 'gyiss', 'gying', 'gyij', 'gyic', 'gyik', 'gyit', 'gyip', 'gyih',
     'gi', 'gig', 'gigg', 'gigs', 'gin', 'ginj', 'ginh', 'gid', 'gil', 'gilg', 'gilm', 'gilb', 'gils', 'gilt', 'gilp', 'gilh',

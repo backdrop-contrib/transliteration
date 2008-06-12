@@ -1,6 +1,8 @@
 <?php
+// $Id$
+
 return array(
-  'default' => array('g', 'gg', 'n', 'd', 'dd', 'r', 'm', 'b', 'bb', 's', 'ss', '', 'j', 'jj', 'c', 'k',
+  'en' => array('g', 'gg', 'n', 'd', 'dd', 'r', 'm', 'b', 'bb', 's', 'ss', '', 'j', 'jj', 'c', 'k',
     't', 'p', 'h', 'ng', 'nn', 'nd', 'nb', 'dg', 'rn', 'rr', 'rh', 'rN', 'mb', 'mN', 'bg', 'bn',
     '', 'bs', 'bsg', 'bst', 'bsb', 'bss', 'bsj', 'bj', 'bc', 'bt', 'bp', 'bN', 'bbN', 'sg', 'sn', 'sd',
     'sr', 'sm', 'sb', 'sbg', 'sss', 's', 'sj', 'sc', 'sk', 'st', 'sp', 'sh', '', '', '', '',

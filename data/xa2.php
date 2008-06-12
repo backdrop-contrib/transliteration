@@ -1,6 +1,8 @@
 <?php
+// $Id$
+
 return array(
-  'default' => array('kax', 'ka', 'kap', 'kuox', 'kuo', 'kuop', 'kot', 'kox', 'ko', 'kop', 'ket', 'kex', 'ke', 'kep', 'kut', 'kux',
+  'en' => array('kax', 'ka', 'kap', 'kuox', 'kuo', 'kuop', 'kot', 'kox', 'ko', 'kop', 'ket', 'kex', 'ke', 'kep', 'kut', 'kux',
     'ku', 'kup', 'kurx', 'kur', 'ggit', 'ggix', 'ggi', 'ggiex', 'ggie', 'ggiep', 'ggat', 'ggax', 'gga', 'ggap', 'gguot', 'gguox',
     'gguo', 'gguop', 'ggot', 'ggox', 'ggo', 'ggop', 'gget', 'ggex', 'gge', 'ggep', 'ggut', 'ggux', 'ggu', 'ggup', 'ggurx', 'ggur',
     'mgiex', 'mgie', 'mgat', 'mgax', 'mga', 'mgap', 'mguox', 'mguo', 'mguop', 'mgot', 'mgox', 'mgo', 'mgop', 'mgex', 'mge', 'mgep',

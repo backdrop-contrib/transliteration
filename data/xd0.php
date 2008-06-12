@@ -1,6 +1,8 @@
 <?php
+// $Id$
+
 return array(
-  'default' => array('kweon', 'kweonj', 'kweonh', 'kweod', 'kweol', 'kweolg', 'kweolm', 'kweolb', 'kweols', 'kweolt', 'kweolp', 'kweolh', 'kweom', 'kweob', 'kweobs', 'kweos',
+  'en' => array('kweon', 'kweonj', 'kweonh', 'kweod', 'kweol', 'kweolg', 'kweolm', 'kweolb', 'kweols', 'kweolt', 'kweolp', 'kweolh', 'kweom', 'kweob', 'kweobs', 'kweos',
     'kweoss', 'kweong', 'kweoj', 'kweoc', 'kweok', 'kweot', 'kweop', 'kweoh', 'kwe', 'kweg', 'kwegg', 'kwegs', 'kwen', 'kwenj', 'kwenh', 'kwed',
     'kwel', 'kwelg', 'kwelm', 'kwelb', 'kwels', 'kwelt', 'kwelp', 'kwelh', 'kwem', 'kweb', 'kwebs', 'kwes', 'kwess', 'kweng', 'kwej', 'kwec',
     'kwek', 'kwet', 'kwep', 'kweh', 'kwi', 'kwig', 'kwigg', 'kwigs', 'kwin', 'kwinj', 'kwinh', 'kwid', 'kwil', 'kwilg', 'kwilm', 'kwilb',

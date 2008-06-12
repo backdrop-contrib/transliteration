@@ -1,6 +1,8 @@
 <?php
+// $Id$
+
 return array(
-  'default' => array('gwan', 'gwanj', 'gwanh', 'gwad', 'gwal', 'gwalg', 'gwalm', 'gwalb', 'gwals', 'gwalt', 'gwalp', 'gwalh', 'gwam', 'gwab', 'gwabs', 'gwas',
+  'en' => array('gwan', 'gwanj', 'gwanh', 'gwad', 'gwal', 'gwalg', 'gwalm', 'gwalb', 'gwals', 'gwalt', 'gwalp', 'gwalh', 'gwam', 'gwab', 'gwabs', 'gwas',
     'gwass', 'gwang', 'gwaj', 'gwac', 'gwak', 'gwat', 'gwap', 'gwah', 'gwae', 'gwaeg', 'gwaegg', 'gwaegs', 'gwaen', 'gwaenj', 'gwaenh', 'gwaed',
     'gwael', 'gwaelg', 'gwaelm', 'gwaelb', 'gwaels', 'gwaelt', 'gwaelp', 'gwaelh', 'gwaem', 'gwaeb', 'gwaebs', 'gwaes', 'gwaess', 'gwaeng', 'gwaej', 'gwaec',
     'gwaek', 'gwaet', 'gwaep', 'gwaeh', 'goe', 'goeg', 'goegg', 'goegs', 'goen', 'goenj', 'goenh', 'goed', 'goel', 'goelg', 'goelm', 'goelb',

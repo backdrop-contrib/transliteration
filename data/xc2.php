@@ -1,6 +1,8 @@
 <?php
+// $Id$
+
 return array(
-  'default' => array('syon', 'syonj', 'syonh', 'syod', 'syol', 'syolg', 'syolm', 'syolb', 'syols', 'syolt', 'syolp', 'syolh', 'syom', 'syob', 'syobs', 'syos',
+  'en' => array('syon', 'syonj', 'syonh', 'syod', 'syol', 'syolg', 'syolm', 'syolb', 'syols', 'syolt', 'syolp', 'syolh', 'syom', 'syob', 'syobs', 'syos',
     'syoss', 'syong', 'syoj', 'syoc', 'syok', 'syot', 'syop', 'syoh', 'su', 'sug', 'sugg', 'sugs', 'sun', 'sunj', 'sunh', 'sud',
     'sul', 'sulg', 'sulm', 'sulb', 'suls', 'sult', 'sulp', 'sulh', 'sum', 'sub', 'subs', 'sus', 'suss', 'sung', 'suj', 'suc',
     'suk', 'sut', 'sup', 'suh', 'sweo', 'sweog', 'sweogg', 'sweogs', 'sweon', 'sweonj', 'sweonh', 'sweod', 'sweol', 'sweolg', 'sweolm', 'sweolb',

@@ -1,6 +1,8 @@
 <?php
+// $Id$
+
 return array(
-  'default' => array('jjyim', 'jjyib', 'jjyibs', 'jjyis', 'jjyiss', 'jjying', 'jjyij', 'jjyic', 'jjyik', 'jjyit', 'jjyip', 'jjyih', 'jji', 'jjig', 'jjigg', 'jjigs',
+  'en' => array('jjyim', 'jjyib', 'jjyibs', 'jjyis', 'jjyiss', 'jjying', 'jjyij', 'jjyic', 'jjyik', 'jjyit', 'jjyip', 'jjyih', 'jji', 'jjig', 'jjigg', 'jjigs',
     'jjin', 'jjinj', 'jjinh', 'jjid', 'jjil', 'jjilg', 'jjilm', 'jjilb', 'jjils', 'jjilt', 'jjilp', 'jjilh', 'jjim', 'jjib', 'jjibs', 'jjis',
     'jjiss', 'jjing', 'jjij', 'jjic', 'jjik', 'jjit', 'jjip', 'jjih', 'ca', 'cag', 'cagg', 'cags', 'can', 'canj', 'canh', 'cad',
     'cal', 'calg', 'calm', 'calb', 'cals', 'calt', 'calp', 'calh', 'cam', 'cab', 'cabs', 'cas', 'cass', 'cang', 'caj', 'cac',

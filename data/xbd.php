@@ -1,6 +1,8 @@
 <?php
+// $Id$
+
 return array(
-  'default' => array('bols', 'bolt', 'bolp', 'bolh', 'bom', 'bob', 'bobs', 'bos', 'boss', 'bong', 'boj', 'boc', 'bok', 'bot', 'bop', 'boh',
+  'en' => array('bols', 'bolt', 'bolp', 'bolh', 'bom', 'bob', 'bobs', 'bos', 'boss', 'bong', 'boj', 'boc', 'bok', 'bot', 'bop', 'boh',
     'bwa', 'bwag', 'bwagg', 'bwags', 'bwan', 'bwanj', 'bwanh', 'bwad', 'bwal', 'bwalg', 'bwalm', 'bwalb', 'bwals', 'bwalt', 'bwalp', 'bwalh',
     'bwam', 'bwab', 'bwabs', 'bwas', 'bwass', 'bwang', 'bwaj', 'bwac', 'bwak', 'bwat', 'bwap', 'bwah', 'bwae', 'bwaeg', 'bwaegg', 'bwaegs',
     'bwaen', 'bwaenj', 'bwaenh', 'bwaed', 'bwael', 'bwaelg', 'bwaelm', 'bwaelb', 'bwaels', 'bwaelt', 'bwaelp', 'bwaelh', 'bwaem', 'bwaeb', 'bwaebs', 'bwaes',

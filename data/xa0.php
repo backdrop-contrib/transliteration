@@ -1,6 +1,8 @@
 <?php
+// $Id$
+
 return array(
-  'default' => array('it', 'ix', 'i', 'ip', 'iet', 'iex', 'ie', 'iep', 'at', 'ax', 'a', 'ap', 'uox', 'uo', 'uop', 'ot',
+  'en' => array('it', 'ix', 'i', 'ip', 'iet', 'iex', 'ie', 'iep', 'at', 'ax', 'a', 'ap', 'uox', 'uo', 'uop', 'ot',
     'ox', 'o', 'op', 'ex', 'e', 'wu', 'bit', 'bix', 'bi', 'bip', 'biet', 'biex', 'bie', 'biep', 'bat', 'bax',
     'ba', 'bap', 'buox', 'buo', 'buop', 'bot', 'box', 'bo', 'bop', 'bex', 'be', 'bep', 'but', 'bux', 'bu', 'bup',
     'burx', 'bur', 'byt', 'byx', 'by', 'byp', 'byrx', 'byr', 'pit', 'pix', 'pi', 'pip', 'piex', 'pie', 'piep', 'pat',

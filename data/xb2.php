@@ -1,6 +1,8 @@
 <?php
+// $Id$
+
 return array(
-  'default' => array('nyok', 'nyot', 'nyop', 'nyoh', 'nu', 'nug', 'nugg', 'nugs', 'nun', 'nunj', 'nunh', 'nud', 'nul', 'nulg', 'nulm', 'nulb',
+  'en' => array('nyok', 'nyot', 'nyop', 'nyoh', 'nu', 'nug', 'nugg', 'nugs', 'nun', 'nunj', 'nunh', 'nud', 'nul', 'nulg', 'nulm', 'nulb',
     'nuls', 'nult', 'nulp', 'nulh', 'num', 'nub', 'nubs', 'nus', 'nuss', 'nung', 'nuj', 'nuc', 'nuk', 'nut', 'nup', 'nuh',
     'nweo', 'nweog', 'nweogg', 'nweogs', 'nweon', 'nweonj', 'nweonh', 'nweod', 'nweol', 'nweolg', 'nweolm', 'nweolb', 'nweols', 'nweolt', 'nweolp', 'nweolh',
     'nweom', 'nweob', 'nweobs', 'nweos', 'nweoss', 'nweong', 'nweoj', 'nweoc', 'nweok', 'nweot', 'nweop', 'nweoh', 'nwe', 'nweg', 'nwegg', 'nwegs',

@@ -1,6 +1,8 @@
 <?php
+// $Id$
+
 return array(
-  'default' => array('Kay ', 'Kayng ', 'Ke ', 'Ko ', 'Kol ', 'Koc ', 'Kwi ', 'Kwi ', 'Kyun ', 'Kul ', 'Kum ', 'Na ', 'Na ', 'Na ', 'La ', 'Na ',
+  'en' => array('Kay ', 'Kayng ', 'Ke ', 'Ko ', 'Kol ', 'Koc ', 'Kwi ', 'Kwi ', 'Kyun ', 'Kul ', 'Kum ', 'Na ', 'Na ', 'Na ', 'La ', 'Na ',
     'Na ', 'Na ', 'Na ', 'Na ', 'Nak ', 'Nak ', 'Nak ', 'Nak ', 'Nak ', 'Nak ', 'Nak ', 'Nan ', 'Nan ', 'Nan ', 'Nan ', 'Nan ',
     'Nan ', 'Nam ', 'Nam ', 'Nam ', 'Nam ', 'Nap ', 'Nap ', 'Nap ', 'Nang ', 'Nang ', 'Nang ', 'Nang ', 'Nang ', 'Nay ', 'Nayng ', 'No ',
     'No ', 'No ', 'No ', 'No ', 'No ', 'No ', 'No ', 'No ', 'No ', 'No ', 'No ', 'Nok ', 'Nok ', 'Nok ', 'Nok ', 'Nok ',

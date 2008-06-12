@@ -1,6 +1,8 @@
 <?php
+// $Id$
+
 return array(
-  'default' => array('dyil', 'dyilg', 'dyilm', 'dyilb', 'dyils', 'dyilt', 'dyilp', 'dyilh', 'dyim', 'dyib', 'dyibs', 'dyis', 'dyiss', 'dying', 'dyij', 'dyic',
+  'en' => array('dyil', 'dyilg', 'dyilm', 'dyilb', 'dyils', 'dyilt', 'dyilp', 'dyilh', 'dyim', 'dyib', 'dyibs', 'dyis', 'dyiss', 'dying', 'dyij', 'dyic',
     'dyik', 'dyit', 'dyip', 'dyih', 'di', 'dig', 'digg', 'digs', 'din', 'dinj', 'dinh', 'did', 'dil', 'dilg', 'dilm', 'dilb',
     'dils', 'dilt', 'dilp', 'dilh', 'dim', 'dib', 'dibs', 'dis', 'diss', 'ding', 'dij', 'dic', 'dik', 'dit', 'dip', 'dih',
     'dda', 'ddag', 'ddagg', 'ddags', 'ddan', 'ddanj', 'ddanh', 'ddad', 'ddal', 'ddalg', 'ddalm', 'ddalb', 'ddals', 'ddalt', 'ddalp', 'ddalh',

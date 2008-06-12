@@ -1,6 +1,8 @@
 <?php
+// $Id$
+
 return array(
-  'default' => array('wek', 'wet', 'wep', 'weh', 'wi', 'wig', 'wigg', 'wigs', 'win', 'winj', 'winh', 'wid', 'wil', 'wilg', 'wilm', 'wilb',
+  'en' => array('wek', 'wet', 'wep', 'weh', 'wi', 'wig', 'wigg', 'wigs', 'win', 'winj', 'winh', 'wid', 'wil', 'wilg', 'wilm', 'wilb',
     'wils', 'wilt', 'wilp', 'wilh', 'wim', 'wib', 'wibs', 'wis', 'wiss', 'wing', 'wij', 'wic', 'wik', 'wit', 'wip', 'wih',
     'yu', 'yug', 'yugg', 'yugs', 'yun', 'yunj', 'yunh', 'yud', 'yul', 'yulg', 'yulm', 'yulb', 'yuls', 'yult', 'yulp', 'yulh',
     'yum', 'yub', 'yubs', 'yus', 'yuss', 'yung', 'yuj', 'yuc', 'yuk', 'yut', 'yup', 'yuh', 'eu', 'eug', 'eugg', 'eugs',

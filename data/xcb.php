@@ -1,6 +1,8 @@
 <?php
+// $Id$
+
 return array(
-  'default' => array('jjwaels', 'jjwaelt', 'jjwaelp', 'jjwaelh', 'jjwaem', 'jjwaeb', 'jjwaebs', 'jjwaes', 'jjwaess', 'jjwaeng', 'jjwaej', 'jjwaec', 'jjwaek', 'jjwaet', 'jjwaep', 'jjwaeh',
+  'en' => array('jjwaels', 'jjwaelt', 'jjwaelp', 'jjwaelh', 'jjwaem', 'jjwaeb', 'jjwaebs', 'jjwaes', 'jjwaess', 'jjwaeng', 'jjwaej', 'jjwaec', 'jjwaek', 'jjwaet', 'jjwaep', 'jjwaeh',
     'jjoe', 'jjoeg', 'jjoegg', 'jjoegs', 'jjoen', 'jjoenj', 'jjoenh', 'jjoed', 'jjoel', 'jjoelg', 'jjoelm', 'jjoelb', 'jjoels', 'jjoelt', 'jjoelp', 'jjoelh',
     'jjoem', 'jjoeb', 'jjoebs', 'jjoes', 'jjoess', 'jjoeng', 'jjoej', 'jjoec', 'jjoek', 'jjoet', 'jjoep', 'jjoeh', 'jjyo', 'jjyog', 'jjyogg', 'jjyogs',
     'jjyon', 'jjyonj', 'jjyonh', 'jjyod', 'jjyol', 'jjyolg', 'jjyolm', 'jjyolb', 'jjyols', 'jjyolt', 'jjyolp', 'jjyolh', 'jjyom', 'jjyob', 'jjyobs', 'jjyos',

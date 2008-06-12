@@ -1,6 +1,8 @@
 <?php
+// $Id$
+
 return array(
-  'default' => array('ke', 'keg', 'kegg', 'kegs', 'ken', 'kenj', 'kenh', 'ked', 'kel', 'kelg', 'kelm', 'kelb', 'kels', 'kelt', 'kelp', 'kelh',
+  'en' => array('ke', 'keg', 'kegg', 'kegs', 'ken', 'kenj', 'kenh', 'ked', 'kel', 'kelg', 'kelm', 'kelb', 'kels', 'kelt', 'kelp', 'kelh',
     'kem', 'keb', 'kebs', 'kes', 'kess', 'keng', 'kej', 'kec', 'kek', 'ket', 'kep', 'keh', 'kyeo', 'kyeog', 'kyeogg', 'kyeogs',
     'kyeon', 'kyeonj', 'kyeonh', 'kyeod', 'kyeol', 'kyeolg', 'kyeolm', 'kyeolb', 'kyeols', 'kyeolt', 'kyeolp', 'kyeolh', 'kyeom', 'kyeob', 'kyeobs', 'kyeos',
     'kyeoss', 'kyeong', 'kyeoj', 'kyeoc', 'kyeok', 'kyeot', 'kyeop', 'kyeoh', 'kye', 'kyeg', 'kyegg', 'kyegs', 'kyen', 'kyenj', 'kyenh', 'kyed',

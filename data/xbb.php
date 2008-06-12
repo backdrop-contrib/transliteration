@@ -1,6 +1,8 @@
 <?php
+// $Id$
+
 return array(
-  'default' => array('moen', 'moenj', 'moenh', 'moed', 'moel', 'moelg', 'moelm', 'moelb', 'moels', 'moelt', 'moelp', 'moelh', 'moem', 'moeb', 'moebs', 'moes',
+  'en' => array('moen', 'moenj', 'moenh', 'moed', 'moel', 'moelg', 'moelm', 'moelb', 'moels', 'moelt', 'moelp', 'moelh', 'moem', 'moeb', 'moebs', 'moes',
     'moess', 'moeng', 'moej', 'moec', 'moek', 'moet', 'moep', 'moeh', 'myo', 'myog', 'myogg', 'myogs', 'myon', 'myonj', 'myonh', 'myod',
     'myol', 'myolg', 'myolm', 'myolb', 'myols', 'myolt', 'myolp', 'myolh', 'myom', 'myob', 'myobs', 'myos', 'myoss', 'myong', 'myoj', 'myoc',
     'myok', 'myot', 'myop', 'myoh', 'mu', 'mug', 'mugg', 'mugs', 'mun', 'munj', 'munh', 'mud', 'mul', 'mulg', 'mulm', 'mulb',

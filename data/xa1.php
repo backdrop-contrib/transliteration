@@ -1,6 +1,8 @@
 <?php
+// $Id$
+
 return array(
-  'default' => array('dit', 'dix', 'di', 'dip', 'diex', 'die', 'diep', 'dat', 'dax', 'da', 'dap', 'duox', 'duo', 'dot', 'dox', 'do',
+  'en' => array('dit', 'dix', 'di', 'dip', 'diex', 'die', 'diep', 'dat', 'dax', 'da', 'dap', 'duox', 'duo', 'dot', 'dox', 'do',
     'dop', 'dex', 'de', 'dep', 'dut', 'dux', 'du', 'dup', 'durx', 'dur', 'tit', 'tix', 'ti', 'tip', 'tiex', 'tie',
     'tiep', 'tat', 'tax', 'ta', 'tap', 'tuot', 'tuox', 'tuo', 'tuop', 'tot', 'tox', 'to', 'top', 'tex', 'te', 'tep',
     'tut', 'tux', 'tu', 'tup', 'turx', 'tur', 'ddit', 'ddix', 'ddi', 'ddip', 'ddiex', 'ddie', 'ddiep', 'ddat', 'ddax', 'dda',

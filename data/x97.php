@@ -1,6 +1,8 @@
 <?php
+// $Id$
+
 return array(
-  'default' => array('Xu ', 'Ji ', 'Mu ', 'Chen ', 'Xiao ', 'Zha ', 'Ting ', 'Zhen ', 'Pei ', 'Mei ', 'Ling ', 'Qi ', 'Chou ', 'Huo ', 'Sha ', 'Fei ',
+  'en' => array('Xu ', 'Ji ', 'Mu ', 'Chen ', 'Xiao ', 'Zha ', 'Ting ', 'Zhen ', 'Pei ', 'Mei ', 'Ling ', 'Qi ', 'Chou ', 'Huo ', 'Sha ', 'Fei ',
     'Weng ', 'Zhan ', 'Yin ', 'Ni ', 'Chou ', 'Tun ', 'Lin ', NULL, 'Dong ', 'Ying ', 'Wu ', 'Ling ', 'Shuang ', 'Ling ', 'Xia ', 'Hong ',
     'Yin ', 'Mo ', 'Mai ', 'Yun ', 'Liu ', 'Meng ', 'Bin ', 'Wu ', 'Wei ', 'Huo ', 'Yin ', 'Xi ', 'Yi ', 'Ai ', 'Dan ', 'Deng ',
     'Xian ', 'Yu ', 'Lu ', 'Long ', 'Dai ', 'Ji ', 'Pang ', 'Yang ', 'Ba ', 'Pi ', 'Wei ', NULL, 'Xi ', 'Ji ', 'Mai ', 'Meng ',

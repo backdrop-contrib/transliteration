@@ -1,6 +1,8 @@
 <?php
+// $Id$
+
 return array(
-  'default' => array('syae', 'syaeg', 'syaegg', 'syaegs', 'syaen', 'syaenj', 'syaenh', 'syaed', 'syael', 'syaelg', 'syaelm', 'syaelb', 'syaels', 'syaelt', 'syaelp', 'syaelh',
+  'en' => array('syae', 'syaeg', 'syaegg', 'syaegs', 'syaen', 'syaenj', 'syaenh', 'syaed', 'syael', 'syaelg', 'syaelm', 'syaelb', 'syaels', 'syaelt', 'syaelp', 'syaelh',
     'syaem', 'syaeb', 'syaebs', 'syaes', 'syaess', 'syaeng', 'syaej', 'syaec', 'syaek', 'syaet', 'syaep', 'syaeh', 'seo', 'seog', 'seogg', 'seogs',
     'seon', 'seonj', 'seonh', 'seod', 'seol', 'seolg', 'seolm', 'seolb', 'seols', 'seolt', 'seolp', 'seolh', 'seom', 'seob', 'seobs', 'seos',
     'seoss', 'seong', 'seoj', 'seoc', 'seok', 'seot', 'seop', 'seoh', 'se', 'seg', 'segg', 'segs', 'sen', 'senj', 'senh', 'sed',

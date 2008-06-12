@@ -1,6 +1,8 @@
 <?php
+// $Id$
+
 return array(
-  'default' => array('sswals', 'sswalt', 'sswalp', 'sswalh', 'sswam', 'sswab', 'sswabs', 'sswas', 'sswass', 'sswang', 'sswaj', 'sswac', 'sswak', 'sswat', 'sswap', 'sswah',
+  'en' => array('sswals', 'sswalt', 'sswalp', 'sswalh', 'sswam', 'sswab', 'sswabs', 'sswas', 'sswass', 'sswang', 'sswaj', 'sswac', 'sswak', 'sswat', 'sswap', 'sswah',
     'sswae', 'sswaeg', 'sswaegg', 'sswaegs', 'sswaen', 'sswaenj', 'sswaenh', 'sswaed', 'sswael', 'sswaelg', 'sswaelm', 'sswaelb', 'sswaels', 'sswaelt', 'sswaelp', 'sswaelh',
     'sswaem', 'sswaeb', 'sswaebs', 'sswaes', 'sswaess', 'sswaeng', 'sswaej', 'sswaec', 'sswaek', 'sswaet', 'sswaep', 'sswaeh', 'ssoe', 'ssoeg', 'ssoegg', 'ssoegs',
     'ssoen', 'ssoenj', 'ssoenh', 'ssoed', 'ssoel', 'ssoelg', 'ssoelm', 'ssoelb', 'ssoels', 'ssoelt', 'ssoelp', 'ssoelh', 'ssoem', 'ssoeb', 'ssoebs', 'ssoes',

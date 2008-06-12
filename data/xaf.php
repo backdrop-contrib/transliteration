@@ -1,6 +1,8 @@
 <?php
+// $Id$
+
 return array(
-  'default' => array('ggyeols', 'ggyeolt', 'ggyeolp', 'ggyeolh', 'ggyeom', 'ggyeob', 'ggyeobs', 'ggyeos', 'ggyeoss', 'ggyeong', 'ggyeoj', 'ggyeoc', 'ggyeok', 'ggyeot', 'ggyeop', 'ggyeoh',
+  'en' => array('ggyeols', 'ggyeolt', 'ggyeolp', 'ggyeolh', 'ggyeom', 'ggyeob', 'ggyeobs', 'ggyeos', 'ggyeoss', 'ggyeong', 'ggyeoj', 'ggyeoc', 'ggyeok', 'ggyeot', 'ggyeop', 'ggyeoh',
     'ggye', 'ggyeg', 'ggyegg', 'ggyegs', 'ggyen', 'ggyenj', 'ggyenh', 'ggyed', 'ggyel', 'ggyelg', 'ggyelm', 'ggyelb', 'ggyels', 'ggyelt', 'ggyelp', 'ggyelh',
     'ggyem', 'ggyeb', 'ggyebs', 'ggyes', 'ggyess', 'ggyeng', 'ggyej', 'ggyec', 'ggyek', 'ggyet', 'ggyep', 'ggyeh', 'ggo', 'ggog', 'ggogg', 'ggogs',
     'ggon', 'ggonj', 'ggonh', 'ggod', 'ggol', 'ggolg', 'ggolm', 'ggolb', 'ggols', 'ggolt', 'ggolp', 'ggolh', 'ggom', 'ggob', 'ggobs', 'ggos',

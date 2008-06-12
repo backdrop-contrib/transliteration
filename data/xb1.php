@@ -1,6 +1,8 @@
 <?php
+// $Id$
+
 return array(
-  'default' => array('nyaess', 'nyaeng', 'nyaej', 'nyaec', 'nyaek', 'nyaet', 'nyaep', 'nyaeh', 'neo', 'neog', 'neogg', 'neogs', 'neon', 'neonj', 'neonh', 'neod',
+  'en' => array('nyaess', 'nyaeng', 'nyaej', 'nyaec', 'nyaek', 'nyaet', 'nyaep', 'nyaeh', 'neo', 'neog', 'neogg', 'neogs', 'neon', 'neonj', 'neonh', 'neod',
     'neol', 'neolg', 'neolm', 'neolb', 'neols', 'neolt', 'neolp', 'neolh', 'neom', 'neob', 'neobs', 'neos', 'neoss', 'neong', 'neoj', 'neoc',
     'neok', 'neot', 'neop', 'neoh', 'ne', 'neg', 'negg', 'negs', 'nen', 'nenj', 'nenh', 'ned', 'nel', 'nelg', 'nelm', 'nelb',
     'nels', 'nelt', 'nelp', 'nelh', 'nem', 'neb', 'nebs', 'nes', 'ness', 'neng', 'nej', 'nec', 'nek', 'net', 'nep', 'neh',

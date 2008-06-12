@@ -8,14 +8,17 @@
  *
  * @param string $filename
  *   A file name.
+ * @param string $langcode
+ *   Optional ISO 639 language code used to import language specific
+ *   replacements. Defaults to the current display language.
  * @return string
  *   Cleaned file name.
  */
-function transliteration_clean_filename($filename) {
+function transliteration_clean_filename($filename, $langcode = NULL) {
   // Trim any leading/trailing dots.
   $filename = trim($filename, '.');
   // Transliterate to ASCII.
-  $filename = _transliteration_process($filename, '');
+  $filename = transliteration_process($filename, '', $langcode);
   // Replace whitespace.
   $filename = str_replace(' ', '_', $filename);
   // Remove any remaining non-safe characters.
@@ -25,10 +28,22 @@ function transliteration_clean_filename($filename) {
 }
 
 /**
+ * Transliterate UTF-8 input to plain ASCII.
+ *
  * Based on Mediawiki's UtfNormal::quickIsNFCVerify().
+ *
+ * @param string $string
+ *   UTF-8 text input.
+ * @param string $unknown
+ *   Replacement for unknown characters and illegal UTF-8 sequences.
+ * @param string $langcode
+ *   Optional ISO 639 language code used to import language specific
+ *   replacements. Defaults to the current display language.
+ * @return string
+ *   Plain ASCII output.
  * @see transliteration_get()
  */
-function _transliteration_process($string, $unknown = '?') {
+function transliteration_process($string, $unknown = '?', $langcode = NULL) {
   // Screen out some characters that eg won't be allowed in XML.
   $string = preg_replace('/[\x00-\x08\x0b\x0c\x0e-\x1f]/', $unknown, $string);
 
@@ -126,7 +141,7 @@ function _transliteration_process($string, $unknown = '?') {
         else if ($n <= 0xf7) { $ord = ($n-240)*262144 + (ord($sequence{1})-128)*4096 + (ord($sequence{2})-128)*64 + (ord($sequence{3})-128); }
         else if ($n <= 0xfb) { $ord = ($n-248)*16777216 + (ord($sequence{1})-128)*262144 + (ord($sequence{2})-128)*4096 + (ord($sequence{3})-128)*64 + (ord($sequence{4})-128); }
         else if ($n <= 0xfd) { $ord = ($n-252)*1073741824 + (ord($sequence{1})-128)*16777216 + (ord($sequence{2})-128)*262144 + (ord($sequence{3})-128)*4096 + (ord($sequence{4})-128)*64 + (ord($sequence{5})-128); }
-        $result .= _transliteration_replace($ord, $unknown);
+        $result .= _transliteration_replace($ord, $unknown, $langcode);
         $head = '';
       } elseif ($c < "\x80") {
         // ASCII byte.
@@ -148,38 +163,52 @@ function _transliteration_process($string, $unknown = '?') {
 }
 
 /**
- * Load transliteration database and replace a character.
+ * Lookup and replace a character from the transliteration database.
  *
  * @param integer $ord
  *   A unicode ordinal character code.
  * @param string $unknown
  *   Replacement for unknown characters.
+ * @param string $langcode
+ *   Optional ISO 639 language code used to import language specific
+ *   replacements. Defaults to the current display language.
  * @return string
  *   Plain ASCII replacement character.
  * @see transliteration_get()
  */
-function _transliteration_replace($ord, $unknown = '?') {
-  global $locale;
-  static $banks = array();
+function _transliteration_replace($ord, $unknown = '?', $langcode = NULL) {
+  if (!isset($langcode)) {
+    global $language;
+    $langcode = $language->language;
+  }
+  static $map = array(), $template = array();
 
   $bank = $ord >> 8;
-  if (!isset($banks[$bank])) {
+
+  // Check if we need to load a new bank
+  if (!isset($template[$bank])) {
     $file = drupal_get_path('module', 'transliteration') .'/data/'. sprintf('x%02x', $bank) .'.php';
     if (file_exists($file)) {
-      $charmap = include($file);
-      // Merge locale specific replacements
-      if ($locale && isset($charmap[$locale])) {
-        $banks[$bank] = array_merge($charmap['default'], $charmap[$locale]);
-      }
-      else {
-        $banks[$bank] = $charmap['default'];
-      }
-    } else {
-      $banks[$bank] = array();
+      $template[$bank] = include($file);
+    }
+    else {
+      $template[$bank] = array('en' => array());
+    }
+  }
+
+  // Check if we need to create new mappings with language specific alterations
+  if (!isset($map[$bank][$langcode])) {
+    if ($langcode != 'en' && isset($template[$bank][$langcode])) {
+      // Merge language specific mappings with the default transliteration table
+      $map[$bank][$langcode] = $template[$bank][$langcode] + $template[$bank]['en'];
+    }
+    else {
+      $map[$bank][$langcode] = $template[$bank]['en'];
     }
   }
 
   $ord = $ord & 255;
-  return isset($banks[$bank][$ord]) ? $banks[$bank][$ord] : $unknown;
+
+  return isset($map[$bank][$langcode][$ord]) ? $map[$bank][$langcode][$ord] : $unknown;
 }
 

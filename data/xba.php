@@ -1,6 +1,8 @@
 <?php
+// $Id$
+
 return array(
-  'default' => array('mya', 'myag', 'myagg', 'myags', 'myan', 'myanj', 'myanh', 'myad', 'myal', 'myalg', 'myalm', 'myalb', 'myals', 'myalt', 'myalp', 'myalh',
+  'en' => array('mya', 'myag', 'myagg', 'myags', 'myan', 'myanj', 'myanh', 'myad', 'myal', 'myalg', 'myalm', 'myalb', 'myals', 'myalt', 'myalp', 'myalh',
     'myam', 'myab', 'myabs', 'myas', 'myass', 'myang', 'myaj', 'myac', 'myak', 'myat', 'myap', 'myah', 'myae', 'myaeg', 'myaegg', 'myaegs',
     'myaen', 'myaenj', 'myaenh', 'myaed', 'myael', 'myaelg', 'myaelm', 'myaelb', 'myaels', 'myaelt', 'myaelp', 'myaelh', 'myaem', 'myaeb', 'myaebs', 'myaes',
     'myaess', 'myaeng', 'myaej', 'myaec', 'myaek', 'myaet', 'myaep', 'myaeh', 'meo', 'meog', 'meogg', 'meogs', 'meon', 'meonj', 'meonh', 'meod',

@@ -1,6 +1,8 @@
 <?php
+// $Id$
+
 return array(
-  'default' => array('ddwim', 'ddwib', 'ddwibs', 'ddwis', 'ddwiss', 'ddwing', 'ddwij', 'ddwic', 'ddwik', 'ddwit', 'ddwip', 'ddwih', 'ddyu', 'ddyug', 'ddyugg', 'ddyugs',
+  'en' => array('ddwim', 'ddwib', 'ddwibs', 'ddwis', 'ddwiss', 'ddwing', 'ddwij', 'ddwic', 'ddwik', 'ddwit', 'ddwip', 'ddwih', 'ddyu', 'ddyug', 'ddyugg', 'ddyugs',
     'ddyun', 'ddyunj', 'ddyunh', 'ddyud', 'ddyul', 'ddyulg', 'ddyulm', 'ddyulb', 'ddyuls', 'ddyult', 'ddyulp', 'ddyulh', 'ddyum', 'ddyub', 'ddyubs', 'ddyus',
     'ddyuss', 'ddyung', 'ddyuj', 'ddyuc', 'ddyuk', 'ddyut', 'ddyup', 'ddyuh', 'ddeu', 'ddeug', 'ddeugg', 'ddeugs', 'ddeun', 'ddeunj', 'ddeunh', 'ddeud',
     'ddeul', 'ddeulg', 'ddeulm', 'ddeulb', 'ddeuls', 'ddeult', 'ddeulp', 'ddeulh', 'ddeum', 'ddeub', 'ddeubs', 'ddeus', 'ddeuss', 'ddeung', 'ddeuj', 'ddeuc',

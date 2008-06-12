@@ -1,6 +1,8 @@
 <?php
+// $Id$
+
 return array(
-  'default' => array('qiet', 'qiex', 'qie', 'qiep', 'quot', 'quox', 'quo', 'quop', 'qot', 'qox', 'qo', 'qop', 'qut', 'qux', 'qu', 'qup',
+  'en' => array('qiet', 'qiex', 'qie', 'qiep', 'quot', 'quox', 'quo', 'quop', 'qot', 'qox', 'qo', 'qop', 'qut', 'qux', 'qu', 'qup',
     'qurx', 'qur', 'qyt', 'qyx', 'qy', 'qyp', 'qyrx', 'qyr', 'jjit', 'jjix', 'jji', 'jjip', 'jjiet', 'jjiex', 'jjie', 'jjiep',
     'jjuox', 'jjuo', 'jjuop', 'jjot', 'jjox', 'jjo', 'jjop', 'jjut', 'jjux', 'jju', 'jjup', 'jjurx', 'jjur', 'jjyt', 'jjyx', 'jjy',
     'jjyp', 'njit', 'njix', 'nji', 'njip', 'njiet', 'njiex', 'njie', 'njiep', 'njuox', 'njuo', 'njot', 'njox', 'njo', 'njop', 'njux',

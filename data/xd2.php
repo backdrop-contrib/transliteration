@@ -1,6 +1,8 @@
 <?php
+// $Id$
+
 return array(
-  'default' => array('toels', 'toelt', 'toelp', 'toelh', 'toem', 'toeb', 'toebs', 'toes', 'toess', 'toeng', 'toej', 'toec', 'toek', 'toet', 'toep', 'toeh',
+  'en' => array('toels', 'toelt', 'toelp', 'toelh', 'toem', 'toeb', 'toebs', 'toes', 'toess', 'toeng', 'toej', 'toec', 'toek', 'toet', 'toep', 'toeh',
     'tyo', 'tyog', 'tyogg', 'tyogs', 'tyon', 'tyonj', 'tyonh', 'tyod', 'tyol', 'tyolg', 'tyolm', 'tyolb', 'tyols', 'tyolt', 'tyolp', 'tyolh',
     'tyom', 'tyob', 'tyobs', 'tyos', 'tyoss', 'tyong', 'tyoj', 'tyoc', 'tyok', 'tyot', 'tyop', 'tyoh', 'tu', 'tug', 'tugg', 'tugs',
     'tun', 'tunj', 'tunh', 'tud', 'tul', 'tulg', 'tulm', 'tulb', 'tuls', 'tult', 'tulp', 'tulh', 'tum', 'tub', 'tubs', 'tus',

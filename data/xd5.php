@@ -1,6 +1,8 @@
 <?php
+// $Id$
+
 return array(
-  'default' => array('pyuk', 'pyut', 'pyup', 'pyuh', 'peu', 'peug', 'peugg', 'peugs', 'peun', 'peunj', 'peunh', 'peud', 'peul', 'peulg', 'peulm', 'peulb',
+  'en' => array('pyuk', 'pyut', 'pyup', 'pyuh', 'peu', 'peug', 'peugg', 'peugs', 'peun', 'peunj', 'peunh', 'peud', 'peul', 'peulg', 'peulm', 'peulb',
     'peuls', 'peult', 'peulp', 'peulh', 'peum', 'peub', 'peubs', 'peus', 'peuss', 'peung', 'peuj', 'peuc', 'peuk', 'peut', 'peup', 'peuh',
     'pyi', 'pyig', 'pyigg', 'pyigs', 'pyin', 'pyinj', 'pyinh', 'pyid', 'pyil', 'pyilg', 'pyilm', 'pyilb', 'pyils', 'pyilt', 'pyilp', 'pyilh',
     'pyim', 'pyib', 'pyibs', 'pyis', 'pyiss', 'pying', 'pyij', 'pyic', 'pyik', 'pyit', 'pyip', 'pyih', 'pi', 'pig', 'pigg', 'pigs',

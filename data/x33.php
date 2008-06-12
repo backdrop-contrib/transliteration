@@ -1,6 +1,8 @@
 <?php
+// $Id$
+
 return array(
-  'default' => array('apartment', 'alpha', 'ampere', 'are', 'inning', 'inch', 'won', 'escudo', 'acre', 'ounce', 'ohm', 'kai-ri', 'carat', 'calorie', 'gallon', 'gamma',
+  'en' => array('apartment', 'alpha', 'ampere', 'are', 'inning', 'inch', 'won', 'escudo', 'acre', 'ounce', 'ohm', 'kai-ri', 'carat', 'calorie', 'gallon', 'gamma',
     'giga', 'guinea', 'curie', 'guilder', 'kilo', 'kilogram', 'kilometer', 'kilowatt', 'gram', 'gram ton', 'cruzeiro', 'krone', 'case', 'koruna', 'co-op', 'cycle',
     'centime', 'shilling', 'centi', 'cent', 'dozen', 'desi', 'dollar', 'ton', 'nano', 'knot', 'heights', 'percent', 'parts', 'barrel', 'piaster', 'picul',
     'pico', 'building', 'farad', 'feet', 'bushel', 'franc', 'hectare', 'peso', 'pfennig', 'hertz', 'pence', 'page', 'beta', 'point', 'volt', 'hon',

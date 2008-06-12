@@ -1,6 +1,8 @@
 <?php
+// $Id$
+
 return array(
-  'default' => array('reoss', 'reong', 'reoj', 'reoc', 'reok', 'reot', 'reop', 'reoh', 're', 'reg', 'regg', 'regs', 'ren', 'renj', 'renh', 'red',
+  'en' => array('reoss', 'reong', 'reoj', 'reoc', 'reok', 'reot', 'reop', 'reoh', 're', 'reg', 'regg', 'regs', 'ren', 'renj', 'renh', 'red',
     'rel', 'relg', 'relm', 'relb', 'rels', 'relt', 'relp', 'relh', 'rem', 'reb', 'rebs', 'res', 'ress', 'reng', 'rej', 'rec',
     'rek', 'ret', 'rep', 'reh', 'ryeo', 'ryeog', 'ryeogg', 'ryeogs', 'ryeon', 'ryeonj', 'ryeonh', 'ryeod', 'ryeol', 'ryeolg', 'ryeolm', 'ryeolb',
     'ryeols', 'ryeolt', 'ryeolp', 'ryeolh', 'ryeom', 'ryeob', 'ryeobs', 'ryeos', 'ryeoss', 'ryeong', 'ryeoj', 'ryeoc', 'ryeok', 'ryeot', 'ryeop', 'ryeoh',

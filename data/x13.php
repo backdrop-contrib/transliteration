@@ -1,6 +1,8 @@
 <?php
+// $Id$
+
 return array(
-  'default' => array('ja', 'ju', 'ji', 'jaa', 'jee', 'je', 'jo', 'jwa', 'ga', 'gu', 'gi', 'gaa', 'gee', 'ge', 'go', NULL,
+  'en' => array('ja', 'ju', 'ji', 'jaa', 'jee', 'je', 'jo', 'jwa', 'ga', 'gu', 'gi', 'gaa', 'gee', 'ge', 'go', NULL,
     'gwa', NULL, 'gwi', 'gwaa', 'gwee', 'gwe', NULL, NULL, 'gga', 'ggu', 'ggi', 'ggaa', 'ggee', 'gge', 'ggo', NULL,
     'tha', 'thu', 'thi', 'thaa', 'thee', 'the', 'tho', 'thwa', 'cha', 'chu', 'chi', 'chaa', 'chee', 'che', 'cho', 'chwa',
     'pha', 'phu', 'phi', 'phaa', 'phee', 'phe', 'pho', 'phwa', 'tsa', 'tsu', 'tsi', 'tsaa', 'tsee', 'tse', 'tso', 'tswa',

@@ -1,6 +1,8 @@
 <?php
+// $Id$
+
 return array(
-  'default' => array('tyal', 'tyalg', 'tyalm', 'tyalb', 'tyals', 'tyalt', 'tyalp', 'tyalh', 'tyam', 'tyab', 'tyabs', 'tyas', 'tyass', 'tyang', 'tyaj', 'tyac',
+  'en' => array('tyal', 'tyalg', 'tyalm', 'tyalb', 'tyals', 'tyalt', 'tyalp', 'tyalh', 'tyam', 'tyab', 'tyabs', 'tyas', 'tyass', 'tyang', 'tyaj', 'tyac',
     'tyak', 'tyat', 'tyap', 'tyah', 'tyae', 'tyaeg', 'tyaegg', 'tyaegs', 'tyaen', 'tyaenj', 'tyaenh', 'tyaed', 'tyael', 'tyaelg', 'tyaelm', 'tyaelb',
     'tyaels', 'tyaelt', 'tyaelp', 'tyaelh', 'tyaem', 'tyaeb', 'tyaebs', 'tyaes', 'tyaess', 'tyaeng', 'tyaej', 'tyaec', 'tyaek', 'tyaet', 'tyaep', 'tyaeh',
     'teo', 'teog', 'teogg', 'teogs', 'teon', 'teonj', 'teonh', 'teod', 'teol', 'teolg', 'teolm', 'teolb', 'teols', 'teolt', 'teolp', 'teolh',

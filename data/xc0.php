@@ -1,6 +1,8 @@
 <?php
+// $Id$
+
 return array(
-  'default' => array('bbweok', 'bbweot', 'bbweop', 'bbweoh', 'bbwe', 'bbweg', 'bbwegg', 'bbwegs', 'bbwen', 'bbwenj', 'bbwenh', 'bbwed', 'bbwel', 'bbwelg', 'bbwelm', 'bbwelb',
+  'en' => array('bbweok', 'bbweot', 'bbweop', 'bbweoh', 'bbwe', 'bbweg', 'bbwegg', 'bbwegs', 'bbwen', 'bbwenj', 'bbwenh', 'bbwed', 'bbwel', 'bbwelg', 'bbwelm', 'bbwelb',
     'bbwels', 'bbwelt', 'bbwelp', 'bbwelh', 'bbwem', 'bbweb', 'bbwebs', 'bbwes', 'bbwess', 'bbweng', 'bbwej', 'bbwec', 'bbwek', 'bbwet', 'bbwep', 'bbweh',
     'bbwi', 'bbwig', 'bbwigg', 'bbwigs', 'bbwin', 'bbwinj', 'bbwinh', 'bbwid', 'bbwil', 'bbwilg', 'bbwilm', 'bbwilb', 'bbwils', 'bbwilt', 'bbwilp', 'bbwilh',
     'bbwim', 'bbwib', 'bbwibs', 'bbwis', 'bbwiss', 'bbwing', 'bbwij', 'bbwic', 'bbwik', 'bbwit', 'bbwip', 'bbwih', 'bbyu', 'bbyug', 'bbyugg', 'bbyugs',
