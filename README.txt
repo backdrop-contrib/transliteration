@@ -1,9 +1,9 @@
-/* $Id$ */
+﻿/* $Id$ */
 
 -- SUMMARY --
 
 The purpose of this module is to provide a central transliteration service for
-other Drupal modules, as well as sanitizing the file names when uploading new
+other Drupal modules, as well as sanitizing file names while uploading new
 files.
 
 For a full description visit the project page:
@@ -20,19 +20,18 @@ None.
 -- INSTALLATION --
 
 1. Copy the transliteration module to your modules directory and enable it on
-   the Modules page (admin/build/modules).
-
-   During installation or update all filenames containing invalid characters
+   Site building > Modules (admin/build/modules).
+   During installation or update all filenames containing non-ASCII characters
    will be automatically converted.
 
 2. That's it. The names of all new uploaded files will now automatically be
-   transliterated and cleaned from invalid characters.
+   transliterated and cleaned from non-ASCII characters.
 
 
--- INTEGRATION --
+-- 3RD PARTY INTEGRATION --
 
-Module developers that want to make use of transliteration to clean input
-strings should code similar to the following:
+Module developers who want to make use of transliteration to clean input
+strings may use code similar to this:
 
 if (module_exists('transliteration')) {
   $transliterated = transliteration_get($string);
@@ -40,6 +39,32 @@ if (module_exists('transliteration')) {
 
 Take a look at transliteration.module for an explanation of additional function
 parameters.
+
+
+-- LANGUAGE SPECIFIC REPLACEMENTS --
+
+Transliteration supports language specific alterations, the following guide
+helps you adding them:
+
+1. First find out the Unicode character code you want to change. As an example
+   we'll be using the cyrillic character 'г', whose code is 0x0433 (hexadecimal).
+
+2. The first two digits (ie. '04') tell you in which file the corresponding
+   mapping belongs to. In this case it's data/x04.php.
+
+3. Open it in an editor and add your replacements to the array, for example:
+
+   '<LC>' => array(0x33 => 'g', ...),
+
+   Two things are important here:
+   First, <LC> must be a valid Drupal language code.
+   Second, keep only the last two digits of the character code (ie. 0x33,
+   imagine the other two already encoded in the file name). Remember to use
+   hexadecimal numbers everywhere.
+
+Also take a look at data/x00.php which already contains a bunch of language
+specific replacements. If you think your overrides are useful for others please
+create and file a patch at http://drupal.org/project/issues/transliteration.
 
 
 -- CONTACT --
