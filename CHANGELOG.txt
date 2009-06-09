@@ -1,11 +1,13 @@
 // $Id$
 
-Transliteration 6.x-2.x, xxxx-xx-xx
+Transliteration 6.x-3.x, xxxx-xx-xx
 -----------------------------------
+#199660 by smk-ka: Added a constant to disallow converting pre-existing
+  filenames by default.
 #357254 by overall, Cynicus: Fixed transliteration of Russian letters.
 #364931 by PaV: Added Esperanto transliteration.
-Rewrote retroactive transliteration during installation or update to get rid of
-  SUBSTRING_INDEX function dependency.
+by smk-ka: Rewrote retroactive transliteration to get rid of SUBSTRING_INDEX
+  function dependency.
 #312021 by pcorbett: Added SQL Server support.
 #257041 by Freso: More transliterations (x21??).
 

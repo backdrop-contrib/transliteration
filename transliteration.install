@@ -2,10 +2,29 @@
 // $Id$
 
 /**
+ * Whether to perform retroactive transliteration of existing files.
+ * Since this might break hard-coded links to files in content, it is disabled
+ * by default. Set to TRUE to enable.
+ */
+define('TRANSLITERATION_RETROACTIVE', FALSE);
+
+/**
  * Implementation of hook_install().
  */
 function transliteration_install() {
-  transliteration_install_retroactive();
+  if (TRANSLITERATION_RETROACTIVE) {
+    transliteration_install_retroactive();
+  }
+  else {
+    $t = get_t();
+    drupal_set_message($t('Existing filenames have not been transliterated.'));
+  }
+}
+
+/**
+ * Implementation of hook_uninstall().
+ */
+function transliteration_uninstall() {
 }
 
 /**
@@ -77,7 +96,13 @@ function transliteration_install_retroactive() {
  */
 function transliteration_update_1() {
   $ret = array();
-  transliteration_install_retroactive();
+  if (TRANSLITERATION_RETROACTIVE) {
+    transliteration_install_retroactive();
+  }
+  else {
+    $t = get_t();
+    drupal_set_message($t('Existing filenames have not been transliterated.'));
+  }
   return $ret;
 }
 
