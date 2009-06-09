@@ -97,7 +97,7 @@ Specialized in consulting and planning of Drupal powered sites, UNLEASHED
 MIND offers installation, development, theming, customization, and hosting
 to get you started. Visit http://www.unleashedmind.com for more information.
 
-UTF-8 normalization uses MediaWiki's UtfNormal.php (http://www.mediawiki.org)
-and transliteration is based on CPAN's Text::Unidecode library
-(http://search.cpan.org/~sburke/Text-Unidecode-0.04/lib/Text/Unidecode.pm).
+UTF-8 normalization is based on UtfNormal.php from MediaWiki
+(http://www.mediawiki.org) and transliteration uses data from Sean M. Burke's
+Text::Unidecode module (http://search.cpan.org/~sburke/Text-Unidecode-0.04/lib/Text/Unidecode.pm).
 
