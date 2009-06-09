@@ -2,7 +2,12 @@
 
 Transliteration 6.x-2.x, xxxx-xx-xx
 -----------------------------------
-
+#357254 by overall, Cynicus: Fixed transliteration of Russian letters.
+#364931 by PaV: Added Esperanto transliteration.
+Rewrote retroactive transliteration during installation or update to get rid of
+  SUBSTRING_INDEX function dependency.
+#312021 by pcorbett: Added SQL Server support.
+#257041 by Freso: More transliterations (x21??).
 
 
 Transliteration 6.x-2.0, 2008-06-12
