@@ -2,6 +2,8 @@
 
 Transliteration 6.x-3.x, xxxx-xx-xx
 -----------------------------------
+by smk-ka: New developer-friendly transliteration data file layout.
+by smk-ka: Lowered memory footprint of replacement function.
 #199660 by smk-ka: Added a constant to disallow converting pre-existing
   filenames by default.
 #357254 by overall, Cynicus: Fixed transliteration of Russian letters.
