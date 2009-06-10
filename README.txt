@@ -14,7 +14,7 @@ Bug reports, feature suggestions and latest developments:
 
 -- INSTALLATION --
 
-1. Copy the transliteration module to your modules directory
+1. Copy the transliteration folder to your modules directory.
 
 2. If you are installing to an existing Drupal site, you might want to enable
    retroactive transliteration during installation of this module. This will
@@ -33,10 +33,12 @@ Bug reports, feature suggestions and latest developments:
    transliteration afterwards, you can rerun update.php and manually select
    update #1.
 
-3. Enable the module on Site building > Modules.
+3. Install as usual, see http://drupal.org/node/70151 for further information.
 
-4. That's it. The names of all new uploaded files will now automatically be
-   transliterated and cleaned from non-ASCII characters.
+
+-- CONFIGURATION --
+
+This module has no settings that can be customized.
 
 
 -- 3RD PARTY INTEGRATION --
@@ -89,15 +91,16 @@ create and file a patch at http://drupal.org/project/issues/transliteration.
 -- CREDITS --
 
 Authors:
-* Stefan M. Kudwien (smk-ka) - dev@unleashedmind.com
-* Daniel F. Kudwien (sun) - dev@unleashedmind.com
+* Stefan M. Kudwien (smk-ka) - http://drupal.org/user/48898
+* Daniel F. Kudwien (sun) - http://drupal.org/user/54136
+
+UTF-8 normalization is based on UtfNormal.php from MediaWiki
+(http://www.mediawiki.org) and transliteration uses data from Sean M. Burke's
+Text::Unidecode CPAN module
+(http://search.cpan.org/~sburke/Text-Unidecode-0.04/lib/Text/Unidecode.pm).
 
 This project has been sponsored by UNLEASHED MIND
 Specialized in consulting and planning of Drupal powered sites, UNLEASHED
 MIND offers installation, development, theming, customization, and hosting
 to get you started. Visit http://www.unleashedmind.com for more information.
-
-UTF-8 normalization is based on UtfNormal.php from MediaWiki
-(http://www.mediawiki.org) and transliteration uses data from Sean M. Burke's
-Text::Unidecode module (http://search.cpan.org/~sburke/Text-Unidecode-0.04/lib/Text/Unidecode.pm).
 
