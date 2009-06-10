@@ -29,4 +29,5 @@ $variant['de'] = array(
   0xE4 => 'ae',
   0xF6 => 'oe',
   0xFC => 'ue',
+  0xDF => 'ss',
 );
