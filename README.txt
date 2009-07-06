@@ -58,7 +58,8 @@ function parameters.
 
 This module uses transliteration data collected from various sources which might
 be incomplete or inaccurate for your specific language. Therefore,
-transliteration supports language specific alterations to the basic replacements. The following guide explains how to add them:
+transliteration supports language specific alterations to the basic
+replacements. The following guide explains how to add them:
 
 1. First find the Unicode character code you want to replace. As an example,
    we'll be adding a custom transliteration for the cyrillic character 'г'
