@@ -1,6 +1,6 @@
 // $Id$
 
-Transliteration 6.x-3.x, xxxx-xx-xx
+Transliteration 7.x-3.x, xxxx-xx-xx
 -----------------------------------
 by smk-ka: New developer-friendly transliteration data file layout.
 by smk-ka: Lowered memory footprint of replacement function.
