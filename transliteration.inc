@@ -4,15 +4,15 @@
 /**
  * Sanitize a file name.
  *
- * Transliterates the file name and removes all problematic characters.
+ * Transliterates the file name and removes invalid characters.
  *
- * @param string $filename
+ * @param $filename
  *   A file name.
- * @param string $langcode
- *   Optional ISO 639 language code used to import language specific
- *   replacements. Defaults to the current display language.
- *
- * @return string
+ * @param $langcode
+ *   Optional ISO 639 language code that denotes the language of the input.
+ *   Used to apply language-specific optimizations.  Defaults to the current
+ *   display language.
+ * @return
  *   Cleaned file name.
  */
 function transliteration_clean_filename($filename, $langcode = NULL) {
@@ -29,21 +29,21 @@ function transliteration_clean_filename($filename, $langcode = NULL) {
 }
 
 /**
- * Transliterate UTF-8 input to plain ASCII.
+ * Transliterate UTF-8 text to ASCII.
  *
  * Based on Mediawiki's UtfNormal::quickIsNFCVerify().
  *
- * @param string $string
+ * @param $string
  *   UTF-8 text input.
- * @param string $unknown
- *   Replacement for unknown characters and illegal UTF-8 sequences.
- * @param string $langcode
- *   Optional ISO 639 language code used to import language specific
- *   replacements. Defaults to the current display language.
- *
- * @return string
- *   Plain ASCII output.
- * @see transliteration_get()
+ * @param $unknown
+ *   Replacement string for characters that do not have a suitable ASCII
+ *   equivalent.
+ * @param $langcode
+ *   Optional ISO 639 language code that denotes the language of the input.
+ *   Used to apply language-specific optimizations.  Defaults to the current
+ *   display language.
+ * @return
+ *   Transliterated text.
  */
 function transliteration_process($string, $unknown = '?', $langcode = NULL) {
   // Screen out some characters that eg won't be allowed in XML.
@@ -96,7 +96,7 @@ function transliteration_process($string, $unknown = '?', $langcode = NULL) {
 
   $result = '';
   foreach ($matches[0] as $str) {
-    if ($str{0} < "\x80") {
+    if ($str[0] < "\x80") {
       // ASCII chunk: guaranteed to be valid UTF-8
       // and in normal form C, so skip over it.
       $result .= $str;
@@ -116,13 +116,13 @@ function transliteration_process($string, $unknown = '?', $langcode = NULL) {
     $len = $chunk + 1;
 
     for ($i = -1; --$len; ) {
-      $c = $str{++$i};
+      $c = $str[++$i];
       if ($remaining = $tailBytes[$c]) {
         // UTF-8 head byte!
         $sequence = $head = $c;
         do {
           // Look for the defined number of tail bytes...
-          if (--$len && ($c = $str{++$i}) >= "\x80" && $c < "\xc0") {
+          if (--$len && ($c = $str[++$i]) >= "\x80" && $c < "\xc0") {
             // Legal tail bytes are nice.
             $sequence .= $c;
           }
@@ -148,19 +148,19 @@ function transliteration_process($string, $unknown = '?', $langcode = NULL) {
 
         $n = ord($head);
         if ($n <= 0xdf) {
-          $ord = ($n - 192) * 64 + (ord($sequence{1}) - 128);
+          $ord = ($n - 192) * 64 + (ord($sequence[1]) - 128);
         }
         else if ($n <= 0xef) {
-          $ord = ($n - 224) * 4096 + (ord($sequence{1}) - 128) * 64 + (ord($sequence{2}) - 128);
+          $ord = ($n - 224) * 4096 + (ord($sequence[1]) - 128) * 64 + (ord($sequence[2]) - 128);
         }
         else if ($n <= 0xf7) {
-          $ord = ($n - 240) * 262144 + (ord($sequence{1}) - 128) * 4096 + (ord($sequence{2}) - 128) * 64 + (ord($sequence{3}) - 128);
+          $ord = ($n - 240) * 262144 + (ord($sequence[1]) - 128) * 4096 + (ord($sequence[2]) - 128) * 64 + (ord($sequence[3]) - 128);
         }
         else if ($n <= 0xfb) {
-          $ord = ($n - 248) * 16777216 + (ord($sequence{1}) - 128) * 262144 + (ord($sequence{2}) - 128) * 4096 + (ord($sequence{3}) - 128) * 64 + (ord($sequence{4}) - 128);
+          $ord = ($n - 248) * 16777216 + (ord($sequence[1]) - 128) * 262144 + (ord($sequence[2]) - 128) * 4096 + (ord($sequence[3]) - 128) * 64 + (ord($sequence[4]) - 128);
         }
         else if ($n <= 0xfd) {
-          $ord = ($n - 252) * 1073741824 + (ord($sequence{1}) - 128) * 16777216 + (ord($sequence{2}) - 128) * 262144 + (ord($sequence{3}) - 128) * 4096 + (ord($sequence{4}) - 128) * 64 + (ord($sequence{5}) - 128);
+          $ord = ($n - 252) * 1073741824 + (ord($sequence[1]) - 128) * 16777216 + (ord($sequence[2]) - 128) * 262144 + (ord($sequence[3]) - 128) * 4096 + (ord($sequence[4]) - 128) * 64 + (ord($sequence[5]) - 128);
         }
         $result .= _transliteration_replace($ord, $unknown, $langcode);
         $head = '';
@@ -187,19 +187,19 @@ function transliteration_process($string, $unknown = '?', $langcode = NULL) {
 }
 
 /**
- * Lookup and replace a character from the transliteration database.
+ * Load the transliteration database and replace a Unicode character.
  *
- * @param integer $ord
- *   A unicode ordinal character code.
- * @param string $unknown
- *   Replacement for unknown characters.
- * @param string $langcode
- *   Optional ISO 639 language code used to import language specific
- *   replacements. Defaults to the current display language.
- *
- * @return string
- *   Plain ASCII replacement character.
- * @see transliteration_get()
+ * @param $ord
+ *   A ordinal Unicode character code.
+ * @param $unknown
+ *   Replacement string for characters that do not have a suitable ASCII
+ *   equivalent.
+ * @param $langcode
+ *   Optional ISO 639 language code that denotes the language of the input.
+ *   Used to apply language-specific optimizations.  Defaults to the current
+ *   display language.
+ * @return
+ *   ASCII replacement character.
  */
 function _transliteration_replace($ord, $unknown = '?', $langcode = NULL) {
   static $map = array();

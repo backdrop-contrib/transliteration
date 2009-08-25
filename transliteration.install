@@ -2,6 +2,11 @@
 // $Id$
 
 /**
+ * @file
+ * Install, update, and uninstall functions for the transliteration module.
+ */
+
+/**
  * Whether to perform retroactive transliteration of existing files.
  * Since this might break hard-coded links to files in content, it is disabled
  * by default. Set to TRUE to enable.
