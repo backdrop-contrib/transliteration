@@ -21,7 +21,7 @@ $base = array(
 );
 
 // Overrides for Kyrgyz input.
-$variant['ky'] = array(
+$variant['kg'] = array(
   0x01 => 'E',
   0x16 => 'C',
   0x19 => 'J',
