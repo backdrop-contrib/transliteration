@@ -24,6 +24,8 @@ function transliteration_clean_filename($filename, $langcode = NULL) {
   $filename = str_replace(' ', '_', $filename);
   // Remove any remaining non-safe characters.
   $filename = preg_replace('/[^0-9A-Za-z_.-]/', '', $filename);
+  // Force lowercase to prevent issues on case insensitive file systems.
+  $filename = strtolower($filename);
 
   return $filename;
 }
