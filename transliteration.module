@@ -51,6 +51,8 @@ function transliteration_init() {
       }
     }
     foreach ($_FILES['files']['name'] as $field => $filename) {
+      // Keep a copy of the unaltered file name.
+      $_FILES['files']['orig_name'][$field] = $filename;
       $_FILES['files']['name'][$field] = transliteration_clean_filename($filename, $langcode);
     }
   }
