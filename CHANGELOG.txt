@@ -6,6 +6,7 @@ by smk-ka: New developer-friendly transliteration data file layout.
 by smk-ka: Lowered memory footprint of replacement function.
 #487550 by viadimezzo: Added sz ligature transliteration to German.
 #494234 by yngens: Added Kyrgyz transliteration.
+#586816 by smk-ka: Keep a copy of the unaltered file name in $_FILES['files']['orig_name'].
 
 
 Transliteration 6.x-2.1, 2009-06-09
