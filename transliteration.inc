@@ -8,18 +8,21 @@
  *
  * @param $filename
  *   A file name.
- * @param $langcode
+ * @param $source_langcode
  *   Optional ISO 639 language code that denotes the language of the input.
- *   Used to apply language-specific optimizations.  Defaults to the current
- *   display language.
+ *   Used to apply language-specific variations and defaults to the current
+ *   display language. If transliteration takes place during output (instead
+ *   of creation) and the source language is not known at that time, it is
+ *   recommended to set this argument to 'en' to produce consistent results
+ *   for all enabled languages.
  * @return
  *   Cleaned file name.
  */
-function transliteration_clean_filename($filename, $langcode = NULL) {
+function transliteration_clean_filename($filename, $source_langcode = NULL) {
   // Trim any leading/trailing dots.
   $filename = trim($filename, '.');
   // Transliterate to ASCII.
-  $filename = transliteration_process($filename, '', $langcode);
+  $filename = transliteration_process($filename, '', $source_langcode);
   // Replace whitespace.
   $filename = str_replace(' ', '_', $filename);
   // Remove any remaining non-safe characters.
@@ -40,14 +43,17 @@ function transliteration_clean_filename($filename, $langcode = NULL) {
  * @param $unknown
  *   Replacement string for characters that do not have a suitable ASCII
  *   equivalent.
- * @param $langcode
+ * @param $source_langcode
  *   Optional ISO 639 language code that denotes the language of the input.
- *   Used to apply language-specific optimizations.  Defaults to the current
- *   display language.
+ *   Used to apply language-specific variations and defaults to the current
+ *   display language. If transliteration takes place during output (instead
+ *   of creation) and the source language is not known at that time, it is
+ *   recommended to set this argument to 'en' to produce consistent results
+ *   for all enabled languages.
  * @return
  *   Transliterated text.
  */
-function transliteration_process($string, $unknown = '?', $langcode = NULL) {
+function transliteration_process($string, $unknown = '?', $source_langcode = NULL) {
   // Screen out some characters that eg won't be allowed in XML.
   $string = preg_replace('/[\x00-\x08\x0b\x0c\x0e-\x1f]/', $unknown, $string);
 
@@ -152,19 +158,19 @@ function transliteration_process($string, $unknown = '?', $langcode = NULL) {
         if ($n <= 0xdf) {
           $ord = ($n - 192) * 64 + (ord($sequence[1]) - 128);
         }
-        else if ($n <= 0xef) {
+        elseif ($n <= 0xef) {
           $ord = ($n - 224) * 4096 + (ord($sequence[1]) - 128) * 64 + (ord($sequence[2]) - 128);
         }
-        else if ($n <= 0xf7) {
+        elseif ($n <= 0xf7) {
           $ord = ($n - 240) * 262144 + (ord($sequence[1]) - 128) * 4096 + (ord($sequence[2]) - 128) * 64 + (ord($sequence[3]) - 128);
         }
-        else if ($n <= 0xfb) {
+        elseif ($n <= 0xfb) {
           $ord = ($n - 248) * 16777216 + (ord($sequence[1]) - 128) * 262144 + (ord($sequence[2]) - 128) * 4096 + (ord($sequence[3]) - 128) * 64 + (ord($sequence[4]) - 128);
         }
-        else if ($n <= 0xfd) {
+        elseif ($n <= 0xfd) {
           $ord = ($n - 252) * 1073741824 + (ord($sequence[1]) - 128) * 16777216 + (ord($sequence[2]) - 128) * 262144 + (ord($sequence[3]) - 128) * 4096 + (ord($sequence[4]) - 128) * 64 + (ord($sequence[5]) - 128);
         }
-        $result .= _transliteration_replace($ord, $unknown, $langcode);
+        $result .= _transliteration_replace($ord, $unknown, $source_langcode);
         $head = '';
       }
       elseif ($c < "\x80") {

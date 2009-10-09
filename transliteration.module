@@ -21,16 +21,19 @@
  * @param $unknown
  *   Replacement string for characters that do not have a suitable ASCII
  *   equivalent.
- * @param $langcode
+ * @param $source_langcode
  *   Optional ISO 639 language code that denotes the language of the input.
- *   Used to apply language-specific optimizations.  Defaults to the current
- *   display language.
+ *   Used to apply language-specific variations and defaults to the current
+ *   display language. If transliteration takes place during output (instead
+ *   of creation) and the source language is not known at that time, it is
+ *   recommended to set this argument to 'en' to produce consistent results
+ *   for all enabled languages.
  * @return
  *   Transliterated text.
  */
-function transliteration_get($input, $unknown = '?', $langcode = NULL) {
+function transliteration_get($input, $unknown = '?', $source_langcode = NULL) {
   module_load_include('inc', 'transliteration');
-  return transliteration_process($input, $unknown, $langcode);
+  return transliteration_process($input, $unknown, $source_langcode);
 }
 
 /**
