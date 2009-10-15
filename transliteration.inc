@@ -2,38 +2,6 @@
 // $Id$
 
 /**
- * Sanitize a file name.
- *
- * Transliterates the file name and removes invalid characters.
- *
- * @param $filename
- *   A file name.
- * @param $source_langcode
- *   Optional ISO 639 language code that denotes the language of the input.
- *   Used to apply language-specific variations and defaults to the current
- *   display language. If transliteration takes place during output (instead
- *   of creation) and the source language is not known at that time, it is
- *   recommended to set this argument to 'en' to produce consistent results
- *   for all enabled languages.
- * @return
- *   Cleaned file name.
- */
-function transliteration_clean_filename($filename, $source_langcode = NULL) {
-  // Trim any leading/trailing dots.
-  $filename = trim($filename, '.');
-  // Transliterate to ASCII.
-  $filename = transliteration_process($filename, '', $source_langcode);
-  // Replace whitespace.
-  $filename = str_replace(' ', '_', $filename);
-  // Remove any remaining non-safe characters.
-  $filename = preg_replace('/[^0-9A-Za-z_.-]/', '', $filename);
-  // Force lowercase to prevent issues on case insensitive file systems.
-  $filename = strtolower($filename);
-
-  return $filename;
-}
-
-/**
  * Transliterate UTF-8 text to ASCII.
  *
  * Based on Mediawiki's UtfNormal::quickIsNFCVerify().
