@@ -2,7 +2,7 @@
 // $Id$
 
 /**
- * Transliterate UTF-8 text to ASCII.
+ * Transliterates UTF-8 text to ASCII.
  *
  * Based on Mediawiki's UtfNormal::quickIsNFCVerify().
  *
@@ -163,7 +163,7 @@ function transliteration_process($string, $unknown = '?', $source_langcode = NUL
 }
 
 /**
- * Load the transliteration database and replace a Unicode character.
+ * Replaces a Unicode character using the transliteration database.
  *
  * @param $ord
  *   A ordinal Unicode character code.

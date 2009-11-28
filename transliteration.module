@@ -3,17 +3,66 @@
 
 /**
  * @file
- * Provides transliteration for UTF-8 text input and sanitzes file names.
+ * Converts non-latin text to US-ASCII and sanitizes file names.
  *
  * Uses data from the Text::Unidecode Perl library.
  * @see http://search.cpan.org/~sburke/Text-Unidecode-0.04/lib/Text/Unidecode.pm
+ *
+ * @author Stefan M. Kudwien (http://drupal.org/user/48898)
  */
 
 /**
- * Sanitize a file path.
+ * Implements hook_menu().
+ */
+function transliteration_menu() {
+  $items['admin/config/media/file-system/settings'] = array(
+    'title' => 'Settings',
+    'file path' => drupal_get_path('module', 'system'),
+    'weight' => -10,
+    'type' => MENU_DEFAULT_LOCAL_TASK,
+  );
+  $items['admin/config/media/file-system/transliteration'] = array(
+    'title' => 'Transliteration',
+    'description' => 'Convert existing file names to US-ASCII.',
+    'page callback' => array('drupal_get_form'),
+    'page arguments' => array('transliteration_retroactive'),
+    'access arguments' => array('administer site configuration'),
+    'file' => 'transliteration.admin.inc',
+    'weight' => 10,
+    'type' => MENU_LOCAL_TASK,
+  );
+  return $items;
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
  *
- * Additionally removes invalid characters from a file name (which may include
- * sub-directories) after transliteration.
+ * Adds transliteration settings to the file system configuration form.
+ */
+function transliteration_form_system_file_system_settings_alter(&$form, &$form_state) {
+  $form['transliteration'] = array(
+    '#type' => 'item',
+    '#title' => t('Transliteration'),
+    '#value' => '',
+  );
+  $form['transliteration']['transliteration_file_uploads'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Enable transliteration of file names during upload.'),
+    '#default_value' => variable_get('transliteration_file_uploads', TRUE),
+  );
+  $form['transliteration']['transliteration_file_lowercase'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Lowercase transliterated file names.'),
+    '#default_value' => variable_get('transliteration_file_lowercase', TRUE),
+    '#description' => t('This is recommended to prevent issues with case-insensitive file systems.'),
+  );
+  $form['buttons']['#weight'] = 1;
+}
+
+/**
+ * Sanitizes a file path.
+ *
+ * Additionally removes invalid characters after transliterating.
  *
  * @param $filename
  *   A file name.
@@ -28,20 +77,20 @@
  *   Cleaned file name.
  */
 function transliteration_clean_filename($filename, $source_langcode = NULL) {
-  // Transliterate.
   $filename = transliteration_get($filename, '', $source_langcode);
   // Replace whitespace.
   $filename = str_replace(' ', '_', $filename);
   // Remove remaining unsafe characters.
-  $filename = preg_replace('![^0-9A-Za-z_./-]!', '', $filename);
+  $filename = preg_replace('![^0-9A-Za-z_.:/-]!', '', $filename);
   // Force lowercase to prevent issues on case-insensitive file systems.
-  $filename = strtolower($filename);
-
+  if (variable_get('transliteration_file_lowercase', TRUE)) {
+    $filename = strtolower($filename);
+  }
   return $filename;
 }
 
 /**
- * Transliterate UTF-8 text to ASCII.
+ * Transliterates UTF-8 text to ASCII.
  *
  * Takes an input string in any language and character set, and tries to
  * represent it in ASCII characters by conveying, in Roman letters, the
@@ -63,19 +112,21 @@ function transliteration_clean_filename($filename, $source_langcode = NULL) {
  *   Transliterated text.
  */
 function transliteration_get($input, $unknown = '?', $source_langcode = NULL) {
-  module_load_include('inc', 'transliteration');
+  static $loaded = FALSE;
+  if (!$loaded) {
+    module_load_include('inc', 'transliteration');
+    $loaded = TRUE;
+  }
   return transliteration_process($input, $unknown, $source_langcode);
 }
 
 /**
- * Implementation of hook_init().
+ * Implements hook_init().
  *
- * Transliterate and clean the names of files currently being uploaded.
+ * Sanitizes names of file uploads.
  */
 function transliteration_init() {
-  if (!empty($_FILES['files'])) {
-    module_load_include('inc', 'transliteration');
-
+  if (!empty($_FILES['files']) && variable_get('transliteration_file_uploads', TRUE)) {
     // Figure out language, which is available for node form submits.
     $langcode = NULL;
     if (!empty($_POST['language'])) {

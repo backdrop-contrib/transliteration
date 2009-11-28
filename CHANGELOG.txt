@@ -2,11 +2,14 @@
 
 Transliteration 7.x-3.x, xxxx-xx-xx
 -----------------------------------
+by smk-ka: Added admin UI for settings and retroactive file name
+  transliteration.
 by smk-ka: New developer-friendly transliteration data file layout.
 by smk-ka: Lowered memory footprint of replacement function.
 #487550 by viadimezzo: Added sz ligature transliteration to German.
 #494234 by yngens: Added Kyrgyz transliteration.
-#586816 by smk-ka: Keep a copy of the unaltered file name in $_FILES['files']['orig_name'].
+#586816 by smk-ka: Keep a copy of the unaltered file name in
+  $_FILES['files'][$name]['orig_name'].
 by smk-ka: Moved transliteration_clean_filename() to main module.
 
 

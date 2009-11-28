@@ -1,7 +1,8 @@
 ; $Id$
 name = Transliteration
-description = Provides transliteration for UTF-8 text input and sanitizes file names.
+description = Converts non-latin text to US-ASCII and sanitizes file names.
 core = 7.x
 files[] = transliteration.module
 files[] = transliteration.inc
+files[] = transliteration.admin.inc
 files[] = transliteration.install
