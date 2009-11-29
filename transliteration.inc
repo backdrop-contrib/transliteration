@@ -2,32 +2,36 @@
 // $Id$
 
 /**
- * Transliterates UTF-8 text to ASCII.
+ * @file
+ * Transliteration processing functions.
+ *
+ * Uses data from the Text::Unidecode Perl library.
+ * @see http://search.cpan.org/~sburke/Text-Unidecode-0.04/lib/Text/Unidecode.pm
+ */
+
+/**
+ * Transliterates UTF-8 encoded text to US-ASCII.
  *
  * Based on Mediawiki's UtfNormal::quickIsNFCVerify().
  *
  * @param $string
- *   UTF-8 text input.
+ *   UTF-8 encoded text input.
  * @param $unknown
  *   Replacement string for characters that do not have a suitable ASCII
  *   equivalent.
  * @param $source_langcode
- *   Optional ISO 639 language code that denotes the language of the input.
- *   Used to apply language-specific variations and defaults to the current
- *   display language. If transliteration takes place during output (instead
- *   of creation) and the source language is not known at that time, it is
- *   recommended to set this argument to 'en' to produce consistent results
- *   for all enabled languages.
+ *   Optional ISO 639 language code that denotes the language of the input and
+ *   is used to apply language-specific variations. If the source language is
+ *   not known at the time of transliteration, it is recommended to set this
+ *   argument to the site default language to produce consistent results.
+ *   Otherwise the current display language will be used.
  * @return
  *   Transliterated text.
  */
 function transliteration_process($string, $unknown = '?', $source_langcode = NULL) {
-  // Screen out some characters that eg won't be allowed in XML.
-  $string = preg_replace('/[\x00-\x08\x0b\x0c\x0e-\x1f]/', $unknown, $string);
-
-  // ASCII is always valid NFC!
-  // If we're only ever given plain ASCII, we can avoid the overhead
-  // of initializing the decomposition tables by skipping out early.
+  // ASCII is always valid NFC! If we're only ever given plain ASCII, we can
+  // avoid the overhead of initializing the decomposition tables by skipping
+  // out early.
   if (!preg_match('/[\x80-\xff]/', $string)) {
     return $string;
   }
@@ -35,8 +39,7 @@ function transliteration_process($string, $unknown = '?', $source_langcode = NUL
   static $tailBytes;
 
   if (!isset($tailBytes)) {
-    // Each UTF-8 head byte is followed by a certain
-    // number of tail bytes.
+    // Each UTF-8 head byte is followed by a certain number of tail bytes.
     $tailBytes = array();
     for ($n = 0; $n < 256; $n++) {
       if ($n < 0xc0) {
@@ -64,27 +67,26 @@ function transliteration_process($string, $unknown = '?', $source_langcode = NUL
     }
   }
 
-  // Chop the text into pure-ASCII and non-ASCII areas;
-  // large ASCII parts can be handled much more quickly.
-  // Don't chop up Unicode areas for punctuation, though,
-  // that wastes energy.
+  // Chop the text into pure-ASCII and non-ASCII areas; large ASCII parts can
+  // be handled much more quickly. Don't chop up Unicode areas for punctuation,
+  // though, that wastes energy.
   preg_match_all('/[\x00-\x7f]+|[\x80-\xff][\x00-\x40\x5b-\x5f\x7b-\xff]*/', $string, $matches);
 
   $result = '';
   foreach ($matches[0] as $str) {
     if ($str[0] < "\x80") {
-      // ASCII chunk: guaranteed to be valid UTF-8
-      // and in normal form C, so skip over it.
+      // ASCII chunk: guaranteed to be valid UTF-8 and in normal form C, so
+      // skip over it.
       $result .= $str;
       continue;
     }
 
-    // We'll have to examine the chunk byte by byte to ensure
-    // that it consists of valid UTF-8 sequences, and to see
-    // if any of them might not be normalized.
+    // We'll have to examine the chunk byte by byte to ensure that it consists
+    // of valid UTF-8 sequences, and to see if any of them might not be
+    // normalized.
     //
-    // Since PHP is not the fastest language on earth, some of
-    // this code is a little ugly with inner loop optimizations.
+    // Since PHP is not the fastest language on earth, some of this code is a
+    // little ugly with inner loop optimizations.
 
     $head = '';
     $chunk = strlen($str);
@@ -104,17 +106,16 @@ function transliteration_process($string, $unknown = '?', $source_langcode = NUL
           }
           else {
             if ($len == 0) {
-              // Premature end of string!
-              // Drop a replacement character into output to
-              // represent the invalid UTF-8 sequence.
+              // Premature end of string! Drop a replacement character into
+              // output to represent the invalid UTF-8 sequence.
               $result .= $unknown;
               break 2;
             }
             else {
               // Illegal tail byte; abandon the sequence.
               $result .= $unknown;
-              // Back up and reprocess this byte; it may itself
-              // be a legal ASCII or UTF-8 sequence head.
+              // Back up and reprocess this byte; it may itself be a legal
+              // ASCII or UTF-8 sequence head.
               --$i;
               ++$len;
               continue 2;
@@ -166,13 +167,13 @@ function transliteration_process($string, $unknown = '?', $source_langcode = NUL
  * Replaces a Unicode character using the transliteration database.
  *
  * @param $ord
- *   A ordinal Unicode character code.
+ *   An ordinal Unicode character code.
  * @param $unknown
  *   Replacement string for characters that do not have a suitable ASCII
  *   equivalent.
  * @param $langcode
- *   Optional ISO 639 language code that denotes the language of the input.
- *   Used to apply language-specific optimizations.  Defaults to the current
+ *   Optional ISO 639 language code that denotes the language of the input and
+ *   is used to apply language-specific variations.  Defaults to the current
  *   display language.
  * @return
  *   ASCII replacement character.

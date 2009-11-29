@@ -46,7 +46,7 @@ Third party developers seeking an easy way to transliterate text or file names
 may use transliteration functions as follows:
 
 if (function_exists('transliteration_get')) {
-  $transliterated = transliteration_get($input, $unknown, $source_langcode);
+  $transliterated = transliteration_get($text, $unknown, $source_langcode);
 }
 
 or, in case of file names:
@@ -56,9 +56,13 @@ if (function_exists('transliteration_clean_filename')) {
 }
 
 Note that the optional $source_langcode parameter specifies the language code
-of the input. If you are transliterating on output, and the source language is not known, you should set this parameter to 'en'. This avoids falling back on
-the current display language, which might introduce unwanted variations in the
-transliterated result.
+of the input. If the source language is not known at the time of transliter-
+ation, it is recommended to set this argument to the site default language:
+
+  $output = transliteration_get($text, '?', language_default('language'));
+
+Otherwise the current display language will be used, which might produce
+inconsistent results.
 
 
 -- LANGUAGE SPECIFIC REPLACEMENTS --

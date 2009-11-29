@@ -11,6 +11,9 @@ by smk-ka: Lowered memory footprint of replacement function.
 #586816 by smk-ka: Keep a copy of the unaltered file name in
   $_FILES['files'][$name]['orig_name'].
 by smk-ka: Moved transliteration_clean_filename() to main module.
+by smk-ka: Reverted the behavior of transliteration_clean_filename() to only
+  accept file names without a path.
+by smk-ka: Updated documentation.
 
 
 Transliteration 6.x-2.1, 2009-06-09
