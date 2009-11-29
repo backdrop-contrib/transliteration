@@ -2,13 +2,17 @@
 #
 # LANGUAGE translation of Drupal (general)
 # Copyright YEAR NAME <EMAIL@ADDRESS>
-# Generated from file: transliteration.info,v 1.2.2.1 2008/05/02 19:24:28 smk
+# Generated from files:
+#  transliteration.admin.inc,v 1.2 2009/11/28 12:49:12 smk
+#  transliteration.module,v 1.9 2009/11/28 12:49:12 smk
+#  transliteration.info,v 1.5 2009/11/28 12:49:12 smk
+#  transliteration.install,v 1.6 2009/11/28 12:49:12 smk
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2008-05-02 21:29+0200\n"
+"POT-Creation-Date: 2009-11-29 16:56+0100\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -17,11 +21,77 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: transliteration.info:0
+#: transliteration.admin.inc:17
+msgid "Database not supported."
+msgstr ""
+
+#: transliteration.admin.inc:18
+msgid "Retroactive transliteration is currently not supported on the database system this Drupal installation uses. If you think this should be fixed please <a href=\"@issues-url\">file an issue</a> in the project issue queue."
+msgstr ""
+
+#: transliteration.admin.inc:24
+msgid "Transliteration not required."
+msgstr ""
+
+#: transliteration.admin.inc:25
+msgid "There are currently no files containing non-ASCII characters in their name."
+msgstr ""
+
+#: transliteration.admin.inc:30
+msgid "Are you sure you want to transliterate existing file names?"
+msgstr ""
+
+#: transliteration.admin.inc:31
+msgid "The database currently lists @filenames containing non-ASCII characters. This count might be inaccurate, though, since it is possible that not all of them actually need to be renamed. Only local files will be processed, while off-site files will never be changed. Note that changing the file name might render references to these files void. Since there is currently no way to fix manually inserted links in contents, it is a good idea to create a database backup beforehand. This action cannot be undone."
+msgstr ""
+
+#: transliteration.admin.inc:32
+msgid "Transliterate"
+msgstr ""
+
+#: transliteration.admin.inc:83
+msgid "Not all file names could be converted. The following files could not be accessed and have been ignored:"
+msgstr ""
+
+#: transliteration.admin.inc:88
+msgid "@filenames have been successfully transliterated."
+msgstr ""
+
+#: transliteration.admin.inc:31;88
+msgid "1 file name"
+msgid_plural "@count file names"
+msgstr[0] ""
+msgstr[1] ""
+
+#: transliteration.module:42;22 transliteration.info:0
 msgid "Transliteration"
 msgstr ""
 
+#: transliteration.module:47
+msgid "Enable transliteration of file names during upload."
+msgstr ""
+
+#: transliteration.module:52
+msgid "Lowercase transliterated file names."
+msgstr ""
+
+#: transliteration.module:54
+msgid "This is recommended to prevent issues with case-insensitive file systems."
+msgstr ""
+
+#: transliteration.module:16
+msgid "Settings"
+msgstr ""
+
+#: transliteration.module:23
+msgid "Convert existing file names to US-ASCII."
+msgstr ""
+
+#: (duplicate) transliteration.install:24 
+msgid "Transliteration has been installed. <a href=\"@transliteration-url\">Fix existing file names</a>."
+msgstr ""
+
 #: transliteration.info:0
-msgid "Provides transliteration for UTF-8 text input and sanitizes file names."
+msgid "Converts non-latin text to US-ASCII and sanitizes file names."
 msgstr ""
 
