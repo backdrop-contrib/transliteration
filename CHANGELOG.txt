@@ -2,6 +2,8 @@
 
 Transliteration 7.x-3.x, xxxx-xx-xx
 -----------------------------------
+by smk-ka: More accurate detection of file names requiring retroactive
+  transliteration. Removed support for MS SQL due to missing regexp support.
 by smk-ka: Added admin UI for settings and retroactive file name
   transliteration.
 by smk-ka: New developer-friendly transliteration data file layout.

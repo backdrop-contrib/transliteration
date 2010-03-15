@@ -21,7 +21,7 @@ function transliteration_menu() {
   $items['admin/config/media/file-system/transliteration'] = array(
     'title' => 'Transliteration',
     'description' => 'Convert existing file names to US-ASCII.',
-    'page callback' => array('drupal_get_form'),
+    'page callback' => 'drupal_get_form',
     'page arguments' => array('transliteration_retroactive'),
     'access arguments' => array('administer site configuration'),
     'file' => 'transliteration.admin.inc',
@@ -44,14 +44,15 @@ function transliteration_form_system_file_system_settings_alter(&$form, &$form_s
   );
   $form['transliteration']['transliteration_file_uploads'] = array(
     '#type' => 'checkbox',
-    '#title' => t('Enable transliteration of file names during upload.'),
+    '#title' => t('Transliterate file names during upload.'),
+    '#description' => t('Enable to convert file names to US-ASCII character set for cross-platform compatibility.'),
     '#default_value' => variable_get('transliteration_file_uploads', TRUE),
   );
   $form['transliteration']['transliteration_file_lowercase'] = array(
     '#type' => 'checkbox',
     '#title' => t('Lowercase transliterated file names.'),
     '#default_value' => variable_get('transliteration_file_lowercase', TRUE),
-    '#description' => t('This is recommended to prevent issues with case-insensitive file systems.'),
+    '#description' => t('This is a recommended setting to prevent issues with case-insensitive file systems. It has no effect if transliteration has been disabled.'),
   );
   $form['buttons']['#weight'] = 1;
 }

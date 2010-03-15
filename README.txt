@@ -18,8 +18,8 @@ Bug reports, feature suggestions and latest developments:
 2. If you are installing to an existing Drupal site, you might want to fix
    existing file names after installation, which will update all file names
    containing non-ASCII characters. However, if you have manually entered links
-   to those files in any content, these links will be broken since the original
-   files will be renamed. Therefore it is a good idea to test the conversion
+   to those files in any contents, these links will break since the original
+   files are renamed. Therefore it is a good idea to test the conversion
    first on a copy of your web site. You'll find the retroactive conversion at
    Configuration and modules >> Media >> File system >> Transliteration.
 
@@ -31,9 +31,9 @@ This module doesn't require special permissions.
 This module can be configured from the File system configuration page
 (Configuration and modules >> Media >> File system >> Settings).
 
-- Enable transliteration of file names during upload: If you need more control
-  over the resulting file names you might want to disable this feature here and
-  install the FileField Paths module (http://drupal.org/project/filefield_paths)
+- Transliterate file names during upload: If you need more control over the
+  resulting file names you might want to disable this feature here and install
+  the FileField Paths module (http://drupal.org/project/filefield_paths)
   instead.
 
 - Lowercase transliterated file names: It is recommended to enable this option
@@ -109,9 +109,4 @@ UTF-8 normalization is based on UtfNormal.php from MediaWiki
 (http://www.mediawiki.org) and transliteration uses data from Sean M. Burke's
 Text::Unidecode CPAN module
 (http://search.cpan.org/~sburke/Text-Unidecode-0.04/lib/Text/Unidecode.pm).
-
-This project has been sponsored by UNLEASHED MIND
-Specialized in consulting and planning of Drupal powered sites, UNLEASHED
-MIND offers installation, development, theming, customization, and hosting
-to get you started. Visit http://www.unleashedmind.com for more information.
 

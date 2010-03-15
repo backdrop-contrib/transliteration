@@ -4,9 +4,6 @@
 /**
  * @file
  * Transliteration processing functions.
- *
- * Uses data from the Text::Unidecode Perl library.
- * @see http://search.cpan.org/~sburke/Text-Unidecode-0.04/lib/Text/Unidecode.pm
  */
 
 /**
