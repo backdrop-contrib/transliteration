@@ -21,7 +21,7 @@ function transliteration_retroactive() {
 
   $count = $query->countQuery()->execute()->fetchColumn();
   if (!$count) {
-    drupal_set_message(t('Transliteration not required.'), 'status');
+    drupal_set_message(t('Transliteration is not required.'), 'status');
     $form['description']['#markup'] = t('There are currently no files names containing non-ASCII characters.');
     return $form;
   }
