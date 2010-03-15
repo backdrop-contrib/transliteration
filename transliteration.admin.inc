@@ -87,6 +87,9 @@ function transliteration_retroactive_submit($form, &$form_state) {
   else {
     drupal_set_message(t('@filenames have been successfully transliterated.', array('@filenames' => format_plural($count, '1 file name', '@count file names'))));
   }
+
+  // Flush page cache.
+  cache_clear_all();
 }
 
 /**
