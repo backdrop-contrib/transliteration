@@ -15,7 +15,7 @@
 function transliteration_retroactive() {
   if (!$query = transliteration_file_query()) {
     drupal_set_message(t('Database not supported.'), 'error');
-    $form['description']['#markup'] = t('Retroactive transliteration is currently not supported for the database system of this Drupal installation. If you think this should be fixed please <a href="@issues-url">file an issue</a> in the project issue queue.', array('@issues-url' => 'http://drupal.org/project/issues/transliteration'));
+    $form['description']['#markup'] = t('Retroactive transliteration is not supported for the database system of this Drupal installation. If you think this should be fixed please <a href="@issues-url">file an issue</a> in the project issue queue.', array('@issues-url' => 'http://drupal.org/project/issues/transliteration'));
     return $form;
   }
 
@@ -26,10 +26,21 @@ function transliteration_retroactive() {
     return $form;
   }
 
-  $form['#redirect'] = 'admin/config/media/file-system/transliteration';
+  $form['#redirect'] = 'admin/config/media/file-system/settings';
   $question = t('Are you sure you want to transliterate existing file names?');
-  $description = t('The database currently lists @x_filenames containing non-ASCII characters. This count might be inaccurate, though, since it is possible that not all of them actually need to be renamed. Only local files will be processed, while off-site files will never be changed. Note that changing the file name might render references to these files void. Since there is currently no way to fix manually inserted links in contents, it is a good idea to create a database backup beforehand. This action cannot be undone.', array('@x_filenames' => format_plural($count, '1 file name', '@count file names')));
-  return confirm_form($form, $question, '<front>', $description, t('Transliterate'));
+
+  // Generate a sample list.
+  $items = array();
+  foreach($query->range(0, 10)->execute() as $file) {
+    $filename = basename($file->uri);
+    $items[] = t('!original becomes %renamed', array('!original' => l($filename, file_create_url($file->uri)), '%renamed' => transliteration_clean_filename($filename)));
+  }
+  $description = '<p><strong>' . t('The database currently lists @x_filenames containing non-ASCII characters.', array('@x_filenames' => format_plural($count, '1 file name', '@count file names'))) . '</strong> ' . t('This count might be inaccurate, though, since some files may not need to be renamed. For example, off-site files will never be changed.') . '</p>';
+  $description .= '<p>' . theme('item_list', array('items' => $items)) . ($count > 10 ? t('(Note: only the first 10 entries are shown.)') : '') . '</p>';
+  $description .= '<p>' . t('<strong>Warning:</strong> if there are manually inserted links in contents, renaming these files will break them. Since there is currently no automated way to also fix the links, it is a good idea to backup the database and files directory beforehand.') . '</p>';
+  $description .= '<p>' . t('This action cannot be undone.') . '</p>';
+
+  return confirm_form($form, $question, 'admin/config/media/file-system/settings', $description, t('Transliterate'));
 }
 
 /**
