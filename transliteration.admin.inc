@@ -129,7 +129,7 @@ function transliteration_file_query() {
   }
 
   return db_select('file_managed')
-    ->fields('file_managed', array('filename'))
+    ->fields('file_managed')
     ->condition('uri', $regex, $operator);
 }
 
