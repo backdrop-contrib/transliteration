@@ -2,6 +2,7 @@
 
 Transliteration 7.x-3.x, xxxx-xx-xx
 -----------------------------------
+#813508 by smk-ka: Fixed SelectQuery::fields() syntax.
 #788530 by jurgenhaas: Fixed database table file is now called file_managed.
 by smk-ka: More accurate detection of file names requiring retroactive
   transliteration. Removed support for MS SQL due to missing regexp support.
