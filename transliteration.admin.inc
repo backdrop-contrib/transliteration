@@ -30,15 +30,23 @@ function transliteration_retroactive() {
   $question = t('Are you sure you want to transliterate existing file names?');
 
   // Generate a sample list.
-  $items = array();
+  $rows = array();
+  $header = array(
+    t('Original file name'),
+    t('Transliterated file name')
+  );
   foreach($query->range(0, 10)->execute() as $file) {
     $filename = basename($file->uri);
-    $items[] = t('!original becomes %renamed', array('!original' => l($filename, file_create_url($file->uri)), '%renamed' => transliteration_clean_filename($filename)));
+    $rows[] = array(l($filename, file_create_url($file->uri)), transliteration_clean_filename($filename));
   }
-  $description = '<p><strong>' . t('The database currently lists @x_filenames containing non-ASCII characters.', array('@x_filenames' => format_plural($count, '1 file name', '@count file names'))) . '</strong> ' . t('This count might be inaccurate, though, since some files may not need to be renamed. For example, off-site files will never be changed.') . '</p>';
-  $description .= '<p>' . theme('item_list', array('items' => $items)) . ($count > 10 ? t('(Note: only the first 10 entries are shown.)') : '') . '</p>';
-  $description .= '<p>' . t('<strong>Warning:</strong> if there are manually inserted links in contents, renaming these files will break them. Since there is currently no automated way to also fix the links, it is a good idea to backup the database and files directory beforehand.') . '</p>';
-  $description .= '<p>' . t('This action cannot be undone.') . '</p>';
+  $description = '<p><strong>' . t('The database currently lists @x_filenames containing non-ASCII characters.', array('@x_filenames' => format_plural($count, '1 file name', '@count file names'))) . '</strong><br />';
+  $description .= t('This count might be inaccurate, though, since some files may not need to be renamed. For example, off-site files will never be changed.') . '</p>';
+  $description .= theme('table', array('header' => $header, 'rows' => $rows));
+  if ($count > 10) {
+    $description .= '<p>' . t('Note: table shows only the first 10 entries.') . '</p>';
+  }
+  $description .= '<p>' . t('<strong>WARNING:</strong> if you have manually entered image or file paths in text fields (for example, text areas or WYSIWYG editors), renaming the files will break these references. Since there is currently no automated way to also fix referenced files in textual contents, it is a very good idea to backup the database and %files directory beforehand. Modules accessing files using their internal system ids are not affected.', array('%files' => file_directory_path())) . '</p>';
+  $description .= '<p style="color: red; font-weight: bold; font-size: 18px;">' . t('This action cannot be undone.') . '</p>';
 
   return confirm_form($form, $question, 'admin/config/media/file-system/settings', $description, t('Transliterate'));
 }
