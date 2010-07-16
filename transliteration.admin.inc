@@ -80,7 +80,7 @@ function transliteration_retroactive_submit($form, &$form_state) {
     if ($wrapper->rename($file->uri, $destination)) {
       $file->uri = $destination;
       // Don't use file_save() as it modifies the timestamp.
-      drupal_write_record('file', $file, 'fid');
+      drupal_write_record('file_managed', $file, 'fid');
       // Inform modules that the file has been updated.
       module_invoke_all('file_update', $file);
       $count++;
@@ -128,8 +128,8 @@ function transliteration_file_query() {
       return FALSE;
   }
 
-  return db_select('file')
-    ->fields('file')
+  return db_select('file_managed')
+    ->fields('filename')
     ->condition('uri', $regex, $operator);
 }
 
