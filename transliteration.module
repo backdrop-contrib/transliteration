@@ -113,12 +113,10 @@ function transliteration_clean_filename($filename, $source_langcode = NULL) {
  * @see language_default()
  */
 function transliteration_get($text, $unknown = '?', $source_langcode = NULL) {
-  static $loaded = FALSE;
-  if (!$loaded) {
+  if (!function_exists('_transliteration_process')) {
     module_load_include('inc', 'transliteration');
-    $loaded = TRUE;
   }
-  return transliteration_process($text, $unknown, $source_langcode);
+  return _transliteration_process($text, $unknown, $source_langcode);
 }
 
 /**
