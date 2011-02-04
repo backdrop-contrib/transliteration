@@ -2,6 +2,7 @@
 
 Transliteration 7.x-3.x, xxxx-xx-xx
 -----------------------------------
+#1005960 by pillarsdotnet, smk-ka: file_directory_path() removed in D7.
 #992268 by smk-ka: Renamed transliteration_process() to avoid conflict with
   hook_process().
 #813508 by smk-ka: Fixed SelectQuery::fields() syntax.
