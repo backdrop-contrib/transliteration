@@ -1,5 +1,4 @@
 <?php
-// $Id$
 
 $base = array(
   0x00 => NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,

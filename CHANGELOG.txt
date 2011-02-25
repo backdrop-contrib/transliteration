@@ -1,4 +1,3 @@
-// $Id$
 
 Transliteration 7.x-3.x, xxxx-xx-xx
 -----------------------------------

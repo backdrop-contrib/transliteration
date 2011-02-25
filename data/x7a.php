@@ -1,5 +1,4 @@
 <?php
-// $Id$
 
 $base = array(
   0x00 => 'Xi ', 'Kao ', 'Lang ', 'Fu ', 'Ze ', 'Shui ', 'Lu ', 'Kun ', 'Gan ', 'Geng ', 'Ti ', 'Cheng ', 'Tu ', 'Shao ', 'Shui ', 'Ya ',

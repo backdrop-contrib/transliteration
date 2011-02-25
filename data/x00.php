@@ -1,5 +1,4 @@
 <?php
-// $Id$
 
 $base = array(
   // Note: to save memory plain ASCII mappings have been left out.
