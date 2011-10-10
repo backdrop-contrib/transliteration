@@ -1,6 +1,7 @@
 
 Transliteration 7.x-3.x, xxxx-xx-xx
 -----------------------------------
+#909670 by jishan, smk-ka: Fixed Vietnamese input.
 #1243974 by cyborg_572: Supporting files uploaded as an array.
 #1033832 by joachim: hook_uninstall doesn't clean up variables.
 #1005960 by pillarsdotnet, smk-ka: file_directory_path() removed in D7.
