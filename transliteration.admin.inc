@@ -34,7 +34,7 @@ function transliteration_retroactive() {
     t('Original file name'),
     t('Transliterated file name')
   );
-  foreach($query->range(0, 10)->execute() as $file) {
+  foreach ($query->range(0, 10)->execute() as $file) {
     $filename = basename($file->uri);
     $rows[] = array(l($filename, file_create_url($file->uri)), transliteration_clean_filename($filename));
   }
@@ -139,4 +139,3 @@ function transliteration_file_query() {
     ->fields('file_managed')
     ->condition('uri', $regex, $operator);
 }
-
