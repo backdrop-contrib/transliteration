@@ -85,6 +85,16 @@ function transliteration_retroactive_submit($form, &$form_state) {
 
     // Rename and update the file record accordingly.
     if ($wrapper->rename($file->uri, $destination)) {
+      // If possible, add a url redirect to handle old URL references.
+      if (module_exists('redirect')) {
+        $redirect = new stdClass();
+        redirect_object_prepare($redirect, array(
+          'source' => $wrapper->getDirectoryPath() . '/' . file_uri_target($file->uri),
+          'redirect' => $wrapper->getDirectoryPath() . '/' . file_uri_target($destination),
+          'status_code' => 301)
+        );
+        redirect_save($redirect);
+      }
       $file->uri = $destination;
       // Don't use file_save() as it modifies the timestamp.
       drupal_write_record('file_managed', $file, 'fid');
