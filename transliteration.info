@@ -1,3 +1,4 @@
 name = Transliteration
 description = Converts non-latin text to US-ASCII and sanitizes file names.
 core = 7.x
+configure = admin/config/media/file-system
