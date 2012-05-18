@@ -137,7 +137,7 @@ function transliteration_file_query() {
   switch (db_driver()) {
     case 'mysql':
     case 'mysqli':
-      $operator = 'NOT REGEXP';
+      $operator = 'NOT REGEXP BINARY';
       $regex = '/[a-z0-9_.-]+$';
       break;
 
