@@ -107,6 +107,8 @@ function transliteration_clean_filename($filename, $source_langcode = NULL) {
   $filename = str_replace(' ', '_', $filename);
   // Remove remaining unsafe characters.
   $filename = preg_replace('![^0-9A-Za-z_.-]!', '', $filename);
+  // Remove multiple consecutive non-alphabetical characters.
+  $filename = preg_replace('/(_)_+|(\.)\.+|(-)-+/', '\\1\\2\\3', $filename);
   // Force lowercase to prevent issues on case-insensitive file systems.
   if (variable_get('transliteration_file_lowercase', TRUE)) {
     $filename = strtolower($filename);
