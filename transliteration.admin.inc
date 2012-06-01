@@ -137,7 +137,10 @@ function transliteration_file_query() {
   switch (db_driver()) {
     case 'mysql':
     case 'mysqli':
-      $operator = 'NOT REGEXP BINARY';
+      $operator = 'NOT REGEXP';
+      if (variable_get('transliteration_file_lowercase', TRUE)) {
+        $operator .= ' BINARY';
+      }
       $regex = '/[a-z0-9_.-]+$';
       break;
 
