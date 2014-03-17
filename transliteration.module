@@ -118,6 +118,9 @@ function transliteration_clean_filename($filename, $source_langcode = NULL) {
     }
     return $filename;
   }
+
+  // Allow other modules to alter the filename prior to processing.
+  drupal_alter('transliteration_clean_filename_prepare', $filename, $source_langcode);
   $filename = transliteration_get($filename, '', $source_langcode);
   // Replace whitespace.
   $filename = str_replace(' ', '_', $filename);
