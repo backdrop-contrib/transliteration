@@ -1,6 +1,6 @@
 # Transliteration
 
-Provides a central transliteration service to other Drupal modules, and
+Provides a central transliteration service to other Backdrop modules, and
 sanitizes file names while uploading.
 
 
