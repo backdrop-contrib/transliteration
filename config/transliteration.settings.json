@@ -1,0 +1,7 @@
+{
+    "_config_name": "transliteration.settings",
+    "file_lowercase": true,
+    "file_uploads": true,
+    "file_uploads_display_name": true,
+    "search": true
+}

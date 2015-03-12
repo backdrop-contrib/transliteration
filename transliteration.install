@@ -20,24 +20,31 @@ function transliteration_install() {
     return;
   }
   $t = get_t();
-  drupal_set_message($t('Transliteration has been installed. <a href="@transliteration-url">Fix existing file names</a>.', array('@transliteration-url' => url('admin/config/media/file-system/transliteration'))));
+  backdrop_set_message($t('Transliteration has been installed. <a href="@transliteration-url">Fix existing file names</a>.', array('@transliteration-url' => url('admin/config/media/file-system/transliteration'))));
 }
 
 /**
- * Implements hook_uninstall().
+ * Move settings from variables to config.
  */
-function transliteration_uninstall() {
-  variable_del('transliteration_file_uploads');
-  variable_del('transliteration_file_lowercase');
-  variable_del('transliteration_search');
+function transliteration_update_1000() {
+  // Migrate variables to config.
+  $config = config('transliteration.settings');
+  $config->set('file_lowercase', update_variable_get('transliteration_file_lowercase', TRUE));
+  $config->set('file_uploads', update_variable_get('transliteration_file_uploads', TRUE));
+  $config->set('file_uploads_display_name', update_variable_get('transliteration_file_uploads_display_name', TRUE));
+  $config->set('search', update_variable_get('transliteration_search', TRUE));
+  $config->save();
+
+  // Delete variables.
+  update_variable_del('transliteration_file_lowercase');
+  update_variable_del('transliteration_file_uploads');
+  update_variable_del('transliteration_file_uploads_display_name');
+  update_variable_del('transliteration_search');
 }
 
 /**
- * Remove unnecessary Drupal 6 variables.
+ * Implements hook_update_last_removed().
  */
-function transliteration_update_7300() {
-  // Delete all the transliteration_filter_no_known_transliteration_* variables
-  // and then clear the variable cache.
-  db_query("DELETE FROM {variable} WHERE name LIKE 'transliteration_filter_no_known_transliteration_%'");
-  cache_clear_all('variables', 'cache');
+function transliteration_update_last_removed() {
+  return 7300;
 }

@@ -17,6 +17,6 @@
  * @see transliteration_clean_filename()
  */
 function hook_transliteration_clean_filename_prepare_alter(&$filename, $source_langcode) {
-  $filename = drupal_strtolower($filename);
+  $filename = backdrop_strtolower($filename);
   $filename = str_ireplace(array('&amp; ', '& '), 'and ', $filename);
 }

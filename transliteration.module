@@ -8,19 +8,30 @@
  */
 
 /**
+ * Implements hook_config_info().
+ */
+function transliteration_config_info() {
+  $prefixes['transliteration.settings'] = array(
+    'label' => t('Transliteration settings'),
+    'group' => t('Transliteration'),
+  );
+  return $prefixes;
+}
+
+/**
  * Implements hook_menu().
  */
 function transliteration_menu() {
   $items['admin/config/media/file-system/settings'] = array(
     'title' => 'Settings',
-    'file path' => drupal_get_path('module', 'system'),
+    'file path' => backdrop_get_path('module', 'system'),
     'weight' => -10,
     'type' => MENU_DEFAULT_LOCAL_TASK,
   );
   $items['admin/config/media/file-system/transliteration'] = array(
     'title' => 'Transliteration',
     'description' => 'Convert existing file names to US-ASCII.',
-    'page callback' => 'drupal_get_form',
+    'page callback' => 'backdrop_get_form',
     'page arguments' => array('transliteration_retroactive'),
     'access arguments' => array('administer site configuration'),
     'file' => 'transliteration.admin.inc',
@@ -36,6 +47,7 @@ function transliteration_menu() {
  * Adds transliteration settings to the file system configuration form.
  */
 function transliteration_form_system_file_system_settings_alter(&$form, &$form_state) {
+  $config = config('transliteration.settings');
   $form['transliteration'] = array(
     '#type' => 'item',
     '#title' => t('Transliteration'),
@@ -45,13 +57,13 @@ function transliteration_form_system_file_system_settings_alter(&$form, &$form_s
     '#type' => 'checkbox',
     '#title' => t('Transliterate file names during upload.'),
     '#description' => t('Enable to convert file names to US-ASCII character set for cross-platform compatibility.'),
-    '#default_value' => variable_get('transliteration_file_uploads', TRUE),
+    '#default_value' => $config->get('file_uploads'),
   );
   $form['transliteration']['transliteration_file_uploads_display_name'] = array(
     '#type' => 'checkbox',
     '#title' => t('Transliterate the displayed file name.'),
     '#description' => t('Enable to also convert the file name that is displayed within the site (for example, in link text).'),
-    '#default_value' => variable_get('transliteration_file_uploads_display_name', TRUE),
+    '#default_value' => $config->get('file_uploads_display_name'),
     '#states' => array(
       'invisible' => array(
         'input[name="transliteration_file_uploads"]' => array('checked' => FALSE),
@@ -61,7 +73,7 @@ function transliteration_form_system_file_system_settings_alter(&$form, &$form_s
   $form['transliteration']['transliteration_file_lowercase'] = array(
     '#type' => 'checkbox',
     '#title' => t('Lowercase transliterated file names.'),
-    '#default_value' => variable_get('transliteration_file_lowercase', TRUE),
+    '#default_value' => $config->get('file_lowercase'),
     '#description' => t('This is a recommended setting to prevent issues with case-insensitive file systems. It has no effect if transliteration has been disabled.'),
     '#states' => array(
       'invisible' => array(
@@ -70,6 +82,17 @@ function transliteration_form_system_file_system_settings_alter(&$form, &$form_s
     ),
   );
   $form['buttons']['#weight'] = 1;
+  $form['#submit'][] = 'transliteration_file_system_settings_submit';
+}
+/**
+ * Submit handler for the file system settings form.
+ */
+function transliteration_file_system_settings_submit($form, &$form_state) {
+  $config = config('transliteration.settings');
+  $config->set('file_uploads', $form_state['values']['transliteration_file_uploads']);
+  $config->set('file_uploads_display_name', $form_state['values']['transliteration_file_uploads_display_name']);
+  $config->set('file_lowercase', $form_state['values']['transliteration_file_lowercase']);
+  $config->save();
 }
 
 /**
@@ -86,8 +109,15 @@ function transliteration_form_search_admin_settings_alter(&$form, &$form_state) 
     '#type' => 'checkbox',
     '#title' => t('Transliterate search index and searched strings.'),
     '#description' => t('Enable to allow searching and indexing using US-ASCII character set, i.e. to treat accented and unaccented letters the same.'),
-    '#default_value' => variable_get('transliteration_search', TRUE),
+    '#default_value' => config_get('transliteration.settings', 'search'),
   );
+  $form['#submit'][] = 'transliteration_search_admin_settings_submit';
+}
+/**
+ * Submit handler for the search settings form.
+ */
+function transliteration_search_admin_settings_submit($form, &$form_state) {
+  config_set('transliteration.settings', 'search', $form_state['values']['transliteration_search']);
 }
 
 /**
@@ -120,7 +150,7 @@ function transliteration_clean_filename($filename, $source_langcode = NULL) {
   }
 
   // Allow other modules to alter the filename prior to processing.
-  drupal_alter('transliteration_clean_filename_prepare', $filename, $source_langcode);
+  backdrop_alter('transliteration_clean_filename_prepare', $filename, $source_langcode);
   $filename = transliteration_get($filename, '', $source_langcode);
   // Replace whitespace.
   $filename = str_replace(' ', '_', $filename);
@@ -129,7 +159,7 @@ function transliteration_clean_filename($filename, $source_langcode = NULL) {
   // Remove multiple consecutive non-alphabetical characters.
   $filename = preg_replace('/(_)_+|(\.)\.+|(-)-+/', '\\1\\2\\3', $filename);
   // Force lowercase to prevent issues on case-insensitive file systems.
-  if (variable_get('transliteration_file_lowercase', TRUE)) {
+  if (config_get('transliteration.settings', 'file_lowercase')) {
     $filename = strtolower($filename);
   }
   return $filename;
@@ -171,7 +201,7 @@ function transliteration_get($text, $unknown = '?', $source_langcode = NULL) {
  * Sanitizes file names during upload.
  */
 function transliteration_init() {
-  if (!empty($_FILES['files']) && variable_get('transliteration_file_uploads', TRUE)) {
+  if (!empty($_FILES['files']) && config_get('transliteration.settings', 'file_uploads')) {
     // Figure out language, which is available in $_POST['language'] for node
     // forms.
     $langcode = NULL;
@@ -198,7 +228,8 @@ function transliteration_file_presave($file) {
   // original version as the human-readable name before saving. (The
   // transliterated version will still be used in the file URI, which is the
   // only place where it matters.)
-  if (!empty($_FILES['files']['name']) && variable_get('transliteration_file_uploads', TRUE) && !variable_get('transliteration_file_uploads_display_name', TRUE)) {
+  $config = config('transliteration.settings');
+  if (!empty($_FILES['files']['name']) && $config->get('file_uploads') && !$config->get('file_uploads_display_name')) {
     $key = array_search($file->filename, $_FILES['files']['name']);
     if ($key !== FALSE && isset($_FILES['files']['orig_name'][$key])) {
       $file->filename = $_FILES['files']['orig_name'][$key];
@@ -213,7 +244,7 @@ function transliteration_file_presave($file) {
  * keywords.
  */
 function transliteration_search_preprocess($text) {
-  if (variable_get('transliteration_search', TRUE)) {
+  if (config_get('transliteration.settings', 'search')) {
     return transliteration_get($text, '', language_default('language'));
   }
   return $text;

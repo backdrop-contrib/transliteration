@@ -13,14 +13,14 @@
  */
 function transliteration_retroactive() {
   if (!$query = transliteration_file_query()) {
-    drupal_set_message(t('Database not supported.'), 'error');
+    backdrop_set_message(t('Database not supported.'), 'error');
     $form['description']['#markup'] = t('Retroactive transliteration is not supported for the database system of this Drupal installation. If you think this should be fixed please <a href="@issues-url">file an issue</a> in the project issue queue.', array('@issues-url' => 'http://drupal.org/project/issues/transliteration'));
     return $form;
   }
 
   $count = $query->countQuery()->execute()->fetchColumn();
   if (!$count) {
-    drupal_set_message(t('Transliteration is not required.'), 'status');
+    backdrop_set_message(t('Transliteration is not required.'), 'status');
     $form['description']['#markup'] = t('There are currently no files names containing non-ASCII characters.');
     return $form;
   }
@@ -44,7 +44,7 @@ function transliteration_retroactive() {
   if ($count > 10) {
     $description .= '<p>' . t('Note: table shows only the first 10 entries.') . '</p>';
   }
-  $description .= '<p>' . t('<strong>WARNING:</strong> if you have manually entered image or file paths in text fields (for example, text areas or WYSIWYG editors), renaming the files will break these references. Since there is currently no automated way to also fix referenced files in textual contents, it is a very good idea to backup the database and %files directory beforehand. Modules accessing files using their internal system ids are not affected.', array('%files' => drupal_realpath(file_default_scheme() . '://'))) . '</p>';
+  $description .= '<p>' . t('<strong>WARNING:</strong> if you have manually entered image or file paths in text fields (for example, text areas or WYSIWYG editors), renaming the files will break these references. Since there is currently no automated way to also fix referenced files in textual contents, it is a very good idea to backup the database and %files directory beforehand. Modules accessing files using their internal system ids are not affected.', array('%files' => backdrop_realpath(file_default_scheme() . '://'))) . '</p>';
   $description .= '<p style="color: red; font-weight: bold; font-size: 18px;">' . t('This action cannot be undone.') . '</p>';
 
   return confirm_form($form, $question, 'admin/config/media/file-system/settings', $description, t('Transliterate'));
@@ -85,7 +85,7 @@ function transliteration_retroactive_submit($form, &$form_state) {
     // Sanitize file name.
     $filename = transliteration_clean_filename(basename($file->uri));
     // Build destination URI.
-    $destination = file_stream_wrapper_uri_normalize(drupal_dirname($file->uri) . '/' . $filename);
+    $destination = file_stream_wrapper_uri_normalize(backdrop_dirname($file->uri) . '/' . $filename);
     $destination = file_destination($destination, FILE_EXISTS_RENAME);
 
     // Rename and update the file record accordingly.
@@ -102,7 +102,7 @@ function transliteration_retroactive_submit($form, &$form_state) {
       }
       $file->uri = $destination;
       // Don't use file_save() as it modifies the timestamp.
-      drupal_write_record('file_managed', $file, 'fid');
+      backdrop_write_record('file_managed', $file, 'fid');
       // Inform modules that the file has been updated.
       module_invoke_all('file_update', $file);
       $count++;
@@ -115,10 +115,10 @@ function transliteration_retroactive_submit($form, &$form_state) {
   if ($errors) {
     $message = t('Not all file names could be converted. The following files could not be accessed and have been ignored:');
     $message .= theme('item_list', array('items' => $errors));
-    drupal_set_message($message, 'error');
+    backdrop_set_message($message, 'error');
   }
   else {
-    drupal_set_message(t('@filenames have been successfully transliterated.', array('@filenames' => format_plural($count, '1 file name', '@count file names'))));
+    backdrop_set_message(t('@filenames have been successfully transliterated.', array('@filenames' => format_plural($count, '1 file name', '@count file names'))));
   }
 
   // Flush page cache.
@@ -138,7 +138,7 @@ function transliteration_file_query() {
     case 'mysql':
     case 'mysqli':
       $operator = 'NOT REGEXP';
-      if (variable_get('transliteration_file_lowercase', TRUE)) {
+      if (config_get('transliteration.settings', 'file_lowercase')) {
         $operator .= ' BINARY';
       }
       $regex = '/[a-z0-9_.-]+$';

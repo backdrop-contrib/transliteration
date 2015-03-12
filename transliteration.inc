@@ -179,13 +179,13 @@ function _transliteration_replace($ord, $unknown = '?', $langcode = NULL) {
 
   if (!isset($langcode)) {
     global $language;
-    $langcode = $language->language;
+    $langcode = $language->langcode;
   }
 
   $bank = $ord >> 8;
 
   if (!isset($map[$bank][$langcode])) {
-    $file = drupal_get_path('module', 'transliteration') . '/data/' . sprintf('x%02x', $bank) . '.php';
+    $file = backdrop_get_path('module', 'transliteration') . '/data/' . sprintf('x%02x', $bank) . '.php';
     if (file_exists($file)) {
       include $file;
       if ($langcode != 'en' && isset($variant[$langcode])) {
