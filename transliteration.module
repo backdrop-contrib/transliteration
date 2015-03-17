@@ -277,9 +277,7 @@ function _transliteration_filter_process($text, $filter, $format, $langcode, $ca
 /**
  * Settings callback for the transliteration filter.
  */
-function _transliteration_filter_settings($form, &$form_state, $filter, $format, $defaults, $filters) {
-  $filter->settings += $defaults;
-
+function _transliteration_filter_settings($form, &$form_state, $filter, $format) {
   return array(
     'no_known_transliteration' => array(
       '#type' => 'textfield',
