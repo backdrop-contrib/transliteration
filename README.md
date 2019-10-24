@@ -1,8 +1,11 @@
+** The functionality of this module has been merged into Backdrop core since version 1.3.0 **
+
+---
+
 # Transliteration
 
 Provides a central transliteration service to other Backdrop modules, and
 sanitizes file names while uploading.
-
 
 ## Installation
 
@@ -17,7 +20,6 @@ sanitizes file names while uploading.
     first on a copy of your web site. You'll find the retroactive conversion at
     Configuration >> Media >> File system >> Transliteration.
 
-
 ## Configuration
 
 This module doesn't require special permissions.
@@ -31,7 +33,6 @@ This module can be configured from the File system configuration page
 
 *   Lowercase transliterated file names: It is recommended to enable this option
     to prevent issues with case-insensitive file systems.
-
 
 ## 3rd Party integration
 
@@ -62,7 +63,6 @@ $output = transliteration_get($text, '?', language_default('language'));
 
 Otherwise the current display language will be used, which might produce
 inconsistent results.
-
 
 ## Language specific replacements
 
@@ -104,7 +104,6 @@ file a patch at http://drupal.org/project/issues/transliteration.
 This project is GPL v2 software. See the LICENSE.txt file in this directory for
 complete text.
 
-
 ## Credits
 
 Authors:
@@ -122,7 +121,6 @@ UTF-8 normalization is based on UtfNormal.php from MediaWiki
 Text::Unidecode CPAN module
 (http://search.cpan.org/~sburke/Text-Unidecode-0.04/lib/Text/Unidecode.pm).
 
-
 ## Useful resources
 
 Unicode Code Converter:
@@ -133,4 +131,3 @@ http://www.utf8-chartable.de/unicode-utf8-table.pl
 
 Country codes:
 http://www.loc.gov/standards/iso639-2/php/code_list.php
-
