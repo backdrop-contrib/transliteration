@@ -3,4 +3,5 @@ description = Converts non-latin text to US-ASCII and sanitizes file names.
 backdrop = 1.x
 configure = admin/config/media/file-system
 type = module
-version = 1.x-1.0.2
+
+dependencies[] = system (<1.3)
