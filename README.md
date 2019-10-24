@@ -1,4 +1,4 @@
-** The functionality of this module has been merged into Backdrop core since version 1.3.0 **
+**The functionality of this module has been merged into Backdrop core since version 1.3.0**
 
 ---
 
