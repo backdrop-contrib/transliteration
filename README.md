@@ -1,8 +1,11 @@
-**The functionality of this module has been merged into Backdrop core since version 1.3.0**
+Transliteration
+=================
 
----
-
-# Transliteration
+**Important note**: Transliteration module was moved into Backdrop core in version 
+1.3.0. Use of this module is no longer necessary and no further changes will be 
+made here. If you would like to report a bug or feature request against 
+Transliteration module, file an issue in the main Backdrop CMS core repository 
+at https://github.com/backdrop/backdrop-issues.
 
 Provides a central transliteration service to other Backdrop modules, and
 sanitizes file names while uploading.
